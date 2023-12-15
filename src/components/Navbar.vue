@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <router-link :to="MainPage">
-      Главная
+      Header
     </router-link>
   </div>
 </template>
@@ -14,6 +14,7 @@ import MainPage from "@/pages/common/MainPage.vue";
 
 <style scoped lang="scss">
 .navbar {
-
+  background-color: #2a2a2a;
+  padding: 20px;
 }
 </style>

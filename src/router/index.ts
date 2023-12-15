@@ -6,7 +6,22 @@ const router = createRouter({
     {
       path: '/',
       name: 'main',
+      meta:{
+        layout:{
+          default:'empty-layout'
+        }
+      },
       component: () => import('@/pages/common/MainPage.vue')
+    },
+    {
+      path: '/test',
+      name: 'test',
+      meta:{
+        layout:{
+          default:'empty-layout'
+        }
+      },
+      component: () => import('@/pages/common/TestPage.vue')
     }
   ]
 })
