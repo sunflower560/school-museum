@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <component :is="layoutComponent"/>
+<!--    <component :is="layoutComponent"/>-->
+    <component :is="Navbar"/>
     <router-view class="view"/>
   </div>
 </template>
@@ -23,8 +24,8 @@ const layoutComponent: any = computed(() => {
 
 <style scoped lang="scss">
 #app {
-  .view {
-    margin-left: 15%;
-  }
+  //.view {
+  //  margin-left: 15%;
+  //}
 }
 </style>

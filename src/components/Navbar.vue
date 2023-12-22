@@ -1,8 +1,11 @@
 <template>
   <div class="navbar">
-    <router-link :to="MainPage">
-      Header
-    </router-link>
+    <div class="navbar-logo">
+      School №8 museum
+    </div>
+    <div class="navbar-content">
+
+    </div>
   </div>
 </template>
 
@@ -16,5 +19,16 @@ import MainPage from "@/pages/common/MainPage.vue";
 .navbar {
   background-color: #2a2a2a;
   padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-logo {
+    border-radius: 15px;
+    padding: 20px;
+    font-size: 18px;
+    color: #483e32;
+    font-weight: bold;
+    background-color: black;
+  }
 }
 </style>
