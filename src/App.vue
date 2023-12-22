@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-<!--    <component :is="layoutComponent"/>-->
     <component :is="Navbar"/>
     <router-view class="view"/>
   </div>
