@@ -15,6 +15,11 @@ a {
   padding: 5px;
 }
 
+h1 {
+  color: #d56008;
+  font-weight: 600;
+}
+
 /*a,*/
 /*.green {*/
 /*  text-decoration: none;*/

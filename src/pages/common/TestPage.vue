@@ -8,7 +8,7 @@
 
 </script>
 
-<style scoped>
+<style lang="scss">
 .main-page {
   padding: 20px;
 }

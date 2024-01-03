@@ -13,10 +13,21 @@
           style="--el-switch-on-color: #9f6004; --el-switch-off-color: #575757"
       />
     </div>
-    <div class="navbar-content">
-      <router-link :to="{name: 'test'}">Test</router-link>
-      <router-link :to="{name: 'main'}">Main</router-link>
-    </div>
+    <el-button type="warning" style="margin-left: 16px" @click="drawer = true">
+      Страницы
+    </el-button>
+
+    <el-drawer v-model="drawer" title="Страницы" size="55vh">
+          <div class="navbar-content">
+            <router-link :to="{name: 'test'}">Test</router-link>
+            <router-link :to="{name: 'main'}">Main</router-link>
+          </div>
+    </el-drawer>
+
+<!--    <div class="navbar-content">-->
+<!--      <router-link :to="{name: 'test'}">Test</router-link>-->
+<!--      <router-link :to="{name: 'main'}">Main</router-link>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -25,6 +36,7 @@ import {ref} from 'vue'
 import {RouterLink} from 'vue-router'
 import MainPage from "@/pages/common/MainPage.vue";
 
+const drawer = ref(false)
 const switchLanguage = ref(false)
 
 </script>
@@ -38,10 +50,12 @@ const switchLanguage = ref(false)
   align-items: center;
 
   &-content {
+    display: flex;
+    flex-direction: column;
     a {
       font-size: 18px;
       background-color: #3b3329;
-      border-radius: 15px;
+      border-radius: 8px;
       padding: 10px;
       margin: 5px;
       transition: all linear 0.2s;
