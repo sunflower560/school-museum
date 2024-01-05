@@ -13,6 +13,7 @@ $color_main_dark_2: #F5853C;
 $color_main: #F8B51A;
 $color_main_white: #FFFFFF;
 $color_orange: #F5853C;
+$color_orange_main: #d56008;
 $color_red: #DE3821;
 $color_blue: #234DBC;
 $color_blue_light_3: #237bd2;
@@ -85,6 +86,14 @@ $size_sidebar_base: $size * 15;
 $size_sidebar_page_base: $size * 35;
 $size_side_right: $size * 24;
 $size_side_menu: $shift;
+
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+$big-screen: 1400px !default;
 
 
 :root {
