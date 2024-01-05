@@ -22,9 +22,5 @@ const layoutComponent: any = computed(() => {
 </script>
 
 <style scoped lang="scss">
-#app {
-  //.view {
-  //  margin-left: 15%;
-  //}
-}
+
 </style>

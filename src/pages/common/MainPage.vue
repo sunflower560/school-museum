@@ -76,15 +76,10 @@ const activeName = ref('first')
 </script>
 
 <style lang="scss">
+@import '/src/styles/variables.scss';
 .main-page {
   text-align: center;
-  margin-left: 20%;
-  margin-right: 20%;
-  padding: 20px;
-  @media(max-width: 1000px) {
-    margin-left: 0;
-    margin-right: 0;
-  }
+  padding: $size_big;
 
   &-main {
     margin-bottom: 4rem;
@@ -98,40 +93,40 @@ const activeName = ref('first')
     }
 
     p:nth-child(3) {
-      font-size: 16px;
+      font-size: $size_small * 2;
       margin-bottom: 1.5rem;
     }
 
     a {
-      color: #509ce5;
-      background-color: #062a50;
+      color: $color_blue_light_2;
+      background-color: $color_blue_very_dark;
       padding: 0.7rem;
       border-radius: 1rem;
       transition: all 0.2s linear;
     }
 
     a:hover {
-      color: #237bd2;
-      background-color: #1a3652;
+      color: $color_blue_light_1;
+      background-color: $color_blue_dark_1;
     }
   }
 
   &-content {
     h2 {
-      font-weight: 600;
+      font-weight: $font_w_medium;
       margin-bottom: 1rem;
     }
 
     ol {
-      font-size: 16px;
-      background-color: #3b3329;
+      font-size: $size_small * 2;
+      background-color: $color_main_brown;
       padding: 2rem;
       border-radius: 0.5rem;
       text-align: left;
       margin-bottom: 5rem;
       li {
         span {
-          color: #d37c00;
+          color: $color_orange;
         }
       }
       li:nth-child(2) {

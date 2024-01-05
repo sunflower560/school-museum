@@ -1,0 +1,35 @@
+@import 'variables.scss';
+
+#app {
+  font-weight: normal;
+  .view {
+    margin-left: 20%;
+    margin-right: 20%;
+    @media(max-width: 1000px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+html {
+  font-family: sans-serif;
+  body {
+    color: $color_text;
+    background-color: $color_background;
+    a {
+      color: white;
+      text-decoration: none;
+      font-weight: normal;
+      font-size: 18px;
+      padding: 5px;
+    }
+
+    h1 {
+      color: #d56008;
+      font-weight: 600;
+    }
+  }
+}
+
+

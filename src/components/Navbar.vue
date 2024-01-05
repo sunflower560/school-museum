@@ -2,7 +2,7 @@
   <div class="navbar">
     <div class="navbar-logo">
       <div class="navbar-logo-school">
-        School №8 museum
+        <p>School №8 museum</p>
       </div>
       <el-switch
           v-model="switchLanguage"
@@ -23,11 +23,6 @@
             <router-link :to="{name: 'main'}">Main</router-link>
           </div>
     </el-drawer>
-
-<!--    <div class="navbar-content">-->
-<!--      <router-link :to="{name: 'test'}">Test</router-link>-->
-<!--      <router-link :to="{name: 'main'}">Main</router-link>-->
-<!--    </div>-->
   </div>
 </template>
 
@@ -42,9 +37,10 @@ const switchLanguage = ref(false)
 </script>
 
 <style scoped lang="scss">
+@import '/src/styles/variables.scss';
 .navbar {
-  background-color: #2a2a2a;
-  padding: 20px;
+  background-color: $color_main_black;
+  padding: $size_big;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,16 +49,15 @@ const switchLanguage = ref(false)
     display: flex;
     flex-direction: column;
     a {
-      font-size: 18px;
-      background-color: #3b3329;
-      border-radius: 8px;
-      padding: 10px;
-      margin: 5px;
+      background-color: $color_main_brown;
+      border-radius: $size_small;
+      padding: $size;
+      margin: $shift;
       transition: all linear 0.2s;
     }
 
     a:hover {
-      background-color: #625545;
+      background-color: $color_main_brown_2;
     }
   }
 
@@ -71,13 +66,14 @@ const switchLanguage = ref(false)
     justify-content: space-evenly;
     align-items: center;
     &-school {
-      margin-right: 20px;
-      border-radius: 15px;
-      padding: 20px;
-      font-size: 18px;
-      color: #483e32;
-      font-weight: bold;
-      background-color: black;
+      p {
+        margin-right: $size_big;
+        border-radius: $radius_tiny * 3;
+        padding: $size_big;
+        color: $color_main_brown_1;
+        font-weight: bold;
+        background-color: black;
+      }
     }
   }
 }

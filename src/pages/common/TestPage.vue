@@ -9,7 +9,8 @@
 </script>
 
 <style lang="scss">
+@import '/src/styles/variables.scss';
 .main-page {
-  padding: 20px;
+  padding: $size;
 }
 </style>
