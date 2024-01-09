@@ -1,67 +1,57 @@
 <template>
   <div class="main-page">
     <div class="main-page-main">
-      <h1>Информация о музейной экспозиции</h1>
+      <h1>{{$t('museum.InfoMuseum')}}</h1>
       <h2>
-        Экспозиция музея <p>"История школы в истории города"</p>
+        {{$t('museum.MuseumExposition')}} <p>"{{$t('museum.SchoolHistory')}}"</p>
       </h2>
       <p>
-        Государства образовательные учреждения Средняя школа №8 Могилев
-        Минский переулок 4, каб 307, <br> историко-краеведческий профиль, базовое
-        направление – история нашей школы
+        {{$t('museum.SchoolAddressOne')}} <br> {{$t('museum.SchoolAddressTwo')}}
       </p>
-      <a href="https://school8mogilev.by/muzeikomnata" target="_blank">Виртуальная экспозиция</a>
+      <a href="https://school8mogilev.by/muzeikomnata" target="_blank">{{$t('museum.VirtualExposition')}}</a>
     </div>
 
     <div class="main-page-content">
-      <h2>Действует с 2004 года</h2>
+      <h2>{{$t('museum.Valid')}}</h2>
       <ol>
-        <li><span>Поисковая и научная:</span> исследовательская деятельность</li>
-        <li><span>Работа школьного музейного кабинета:</span> Накопление
-          материала и экспонатов, учет и хранение музейной коллекции
+        <li><span>{{$t('museum.SearchScientific')}}:</span> {{$t('museum.SearchScientificDescriptions')}}</li>
+        <li><span>{{$t('museum.WorkMuseumOffice')}}:</span> {{$t('museum.WorkMuseumOfficeDescriptions')}}
         </li>
-        <li><span>Культурно-просветительская деятельность:</span>
-          На базе музея действует объединение по интересам «Юные экскурсоводы»
+        <li><span>{{$t('museum.CulturalActivities')}}:</span>
+          {{$t('museum.CulturalActivitiesDescriptions')}}
         </li>
       </ol>
 
       <div class="main-page-exhibit">
-        <h2>Экспонаты музея</h2>
+        <h2>{{$t('museum.MuseumExhibits')}}</h2>
         <el-tabs v-model="activeName" class="demo-tabs">
-          <el-tab-pane label="Шк.принадлежности">
+          <el-tab-pane :label="$t('museum.SchoolAccessories')">
             <p>
-              Учебники, чернильные ручки, чернильница,
-              тетради, дневники учащихся СШ №8 разных лет,
-              аттестаты об образовании и аттестат зрелости,
-              детские газеты и журналы 70-80-х годов, школьные учебники 50-80-х годов,
-              школьные фотографии, начиная с 1941 года, школьная и пионерская форма советского образца,
-              школьный ранец, значки октябретцев, пионеров, комсомольцев, пионерские галстуки, комсомольские билеты выпускников школ
+              {{$t('museum.SchoolAccessoriesDescription')}}
             </p>
           </el-tab-pane>
-          <el-tab-pane label="Фотоархив">
-            Фотоархив составлен не только из школьных фотографий,
-            но есть и фотографии всех директоров и завучей школы,
-            выдающихся выпускников, среди которых есть воины-интернационалисты, спортсмены,
-            художник, профессор, директор областного краеведческого музея и ветеран Байканура, преподаватели, а также многие другие
+          <el-tab-pane :label="$t('museum.PhotoArchive')">
+            <p>
+              {{$t('museum.PhotoArchiveDescription')}}
+            </p>
           </el-tab-pane>
-          <el-tab-pane label="Периодические издания">
-            В музейном зале представлена подборка периодических изданий, в которых публиковались статьи о нашей школе.
-            Экспонаты периода Великой Отечественной войны, аусвайс 1943 года, выданные комендатурой Могилёва (переданы из
-            семейного архива в 2016 году), медицинские инструменты и граммофон 1959 года, семьи выпускника школы 1956
-            года.
+          <el-tab-pane :label="$t('museum.Periodicals')">
+            <p>
+              {{$t('museum.PeriodicalsDescription')}}
+            </p>
           </el-tab-pane>
         </el-tabs>
       </div>
 
       <div class="main-page-sections">
-        <h2>Экспозиция представлена в следующих разделах:</h2>
+        <h2>{{$t('museum.SectionsExhibition')}}:</h2>
         <ul>
-          <li>История средней школы №8</li>
-          <li>Судьба школы, ее учителей и выпускников в годы Великой Отечественной войны</li>
-          <li>О работе учителей нашей школы</li>
-          <li>О выдающихся выпускниках нашей школы</li>
-          <li>История пионерской и комсомольской организации</li>
-          <li>История школьной формы и школьных принадлежностей</li>
+          <li>{{$t('museum.HistorySchool')}}</li>
+          <li>{{$t('museum.FateSchool')}}</li>
+          <li>{{$t('museum.TeacherWork')}}</li>
+          <li>{{$t('museum.Graduates')}}</li>
+          <li>{{$t('museum.Pioneer')}}</li>
+          <li>{{$t('museum.SchoolUniform')}}</li>
         </ul>
       </div>
     </div>
@@ -69,14 +59,43 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import {computed, reactive, Ref, ref, watchEffect} from 'vue'
 
 const activeName = ref('first')
 
+// const year: Ref<string | number> = ref('2020')
+// console.log(year.value)
+// year.value = 2024
+// console.log(year.value)
+//
+//
+// interface Book {
+//   title: string,
+//   description?: string
+// }
+//
+// const book: Book = reactive({ title: 'Harry Potter' })
+// console.log(book)
+//
+//
+// const count = ref('Harry')
+//
+// const double = computed<string>(() => count.value + 'Potter')
+//
+// const result = double.value.split('')
+// console.log(result)
+/////////////////////////////////////
+// const A0 = ref(0)
+// const A1 = ref(1)
+// const A2 = computed(() => A1.value + A0.value)
+// console.log(A2.value)
+// A0.value = 2
+// console.log(A2.value)
 </script>
 
 <style lang="scss">
 @import '/src/styles/variables.scss';
+
 .main-page {
   text-align: center;
   padding: $size_big;
@@ -124,11 +143,13 @@ const activeName = ref('first')
       border-radius: 0.5rem;
       text-align: left;
       margin-bottom: 5rem;
+
       li {
         span {
           color: $color_orange;
         }
       }
+
       li:nth-child(2) {
         margin-top: 1rem;
         margin-bottom: 1rem;
@@ -138,6 +159,7 @@ const activeName = ref('first')
 
   &-exhibit {
     margin-bottom: 5rem;
+
     .demo-tabs {
       padding: 2rem;
       background-color: #575757;
@@ -149,8 +171,10 @@ const activeName = ref('first')
     h2 {
       margin-bottom: 1.5rem;
     }
+
     ul {
       text-align: left;
+
       li {
         margin-bottom: 1rem;
       }

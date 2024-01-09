@@ -1,0 +1,36 @@
+{
+  "common": {
+    "Main": "Main",
+    "SchoolMuseum8": "School №8 museum",
+    "Pages": "Pages"
+  },
+  "museum": {
+    "InfoMuseum": "Information about the museum exhibition",
+    "SchoolHistory": "History of the school in the history of the city",
+    "MuseumExposition": "Museum exposition",
+    "SchoolAddressOne": "State educational institutions Secondary school No. 8 Mogilev Minsky lane 4, room 307,",
+    "SchoolAddressTwo": "historical and local history profile, basic direction – history of our school",
+    "VirtualExposition": "Virtual exposition",
+    "Valid": "Active since 2004",
+    "SearchScientific": "Search and scientific",
+    "WorkMuseumOffice": "Work of the school museum office",
+    "CulturalActivities": "Cultural and educational activities",
+    "SearchScientificDescriptions": "Research activities",
+    "WorkMuseumOfficeDescriptions": "Accumulation of material and exhibits, accounting and storage of museum collections",
+    "CulturalActivitiesDescriptions": "On the basis of the museum there is an association of interests “Young Guides”",
+    "MuseumExhibits": "Museum exhibits",
+    "SchoolAccessories": "School accessories",
+    "SchoolAccessoriesDescription": "Textbooks, ink pens, inkwell, notebooks, diaries of students of school No. 8 of different years, educational certificates and matriculation certificates, children's newspapers and magazines from the 70s-80s, school textbooks from the 50s-80s, school photographs, starting from 1941, Soviet-style school and pioneer uniforms, school backpack, badges of October activists, pioneers, Komsomol members, pioneer ties, Komsomol tickets school graduates",
+    "PhotoArchive": "Photo archive",
+    "PhotoArchiveDescription": "The photo archive is made up not only of school photographs, but there are also photographs of all the directors and head teachers of the school, outstanding graduates, among whom are internationalist soldiers, athletes, an artist, a professor, the director of the regional museum of local history and a veteran of Baikanur, teachers, and many others",
+    "Periodicals": "Periodicals",
+    "PeriodicalsDescription": "The museum hall displays a selection of periodicals in which articles about our school were published. Exhibits from the period of the Great Patriotic War, ausweiss from 1943, issued by the commandant's office of Mogilev (transferred from the family archive in 2016), medical instruments and a gramophone from 1959, families of a school graduate from 1956",
+    "SectionsExhibition": "Sections of the exhibition",
+    "HistorySchool": "History of secondary school №8",
+    "FateSchool": "The fate of the school, its teachers and graduates during the Great Patriotic War",
+    "TeacherWork": "About the work of our school teachers",
+    "Graduates": "About the outstanding graduates of our school",
+    "Pioneer": "History of the pioneer and Komsomol organization",
+    "SchoolUniform": "History of school uniforms and school supplies"
+  }
+}

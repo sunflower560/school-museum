@@ -14,9 +14,11 @@
   "dependencies": {
     "@vueuse/core": "^10.3.0",
     "@vueuse/shared": "^10.3.0",
+    "luxon": "^3.4.0",
     "element-plus": "^2.3.9",
     "pinia": "^2.1.7",
     "vue": "^3.3.10",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.2.5",
     "vue3-mq": "^3.1.3"
   },
