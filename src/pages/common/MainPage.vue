@@ -60,6 +60,7 @@
 
 <script setup lang="ts">
 import {computed, reactive, Ref, ref, watchEffect} from 'vue'
+import {Document, Location, Setting, Menu as IconMenu,} from "@element-plus/icons-vue";
 
 const activeName = ref('first')
 

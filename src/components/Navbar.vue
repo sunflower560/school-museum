@@ -36,7 +36,6 @@ import {useLocalStorage} from "@vueuse/core";
 import {RouterLink} from 'vue-router'
 import {useI18n} from "vue-i18n";
 import {TLocales, TrSchema} from "@/locales";
-import MainPage from "@/pages/common/MainPage.vue";
 
 const drawer = ref(false)
 
@@ -86,5 +85,9 @@ useLocalStorage('ss-ui-local', locale)
       }
     }
   }
+}
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
 }
 </style>
