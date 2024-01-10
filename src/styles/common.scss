@@ -2,14 +2,8 @@
 
 #app {
   font-weight: normal;
-  .nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
   .view {
-    margin-top: $height-big;
+    margin-top: $size_big;
     margin-left: 20%;
     margin-right: 20%;
     @media(max-width: $medium-screen-up) {

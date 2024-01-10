@@ -179,6 +179,10 @@ const activeName = ref('first')
         margin-bottom: 1rem;
       }
     }
+    ul li::marker {
+      color: $color_orange_main;
+      font-size: $shift_large;
+    }
   }
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+  <el-affix>
   <div class="navbar">
     <div class="navbar-logo">
       <div class="navbar-logo-school">
@@ -26,6 +27,7 @@
           </div>
     </el-drawer>
   </div>
+  </el-affix>
 </template>
 
 <script setup lang="ts">
