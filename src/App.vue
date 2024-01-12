@@ -22,14 +22,6 @@ import {computed, ref} from "vue";
 import Menu from '@/components/Menu.vue'
 
 
-const route = useRoute()
-
-// const layoutComponent: any = computed(() => {
-//   if (route?.meta?.layout === 'main-layout') {
-//     return MainLayout
-//   }
-//   return EmptyLayout
-// })
 </script>
 
 <style scoped lang="scss">

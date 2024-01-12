@@ -64,6 +64,25 @@ import {Document, Location, Setting, Menu as IconMenu,} from "@element-plus/icon
 
 const activeName = ref('first')
 
+
+// interface Author {
+//   name: string,
+//   books: Array<string>
+// }
+//
+// const author: Author = reactive({
+//   name: 'John Doe',
+//   books: [
+//     'Vue 2 - Advanced Guide',
+//     'Vue 3 - Basic Guide',
+//     'Vue 4 - The Mystery'
+//   ]
+// })
+//
+// const publishedBooksMessage = computed<string | number>(() => {
+//   return author.books.length > 0 ? 'Yes' : 'No'
+// })
+///////////////////////////
 // const year: Ref<string | number> = ref('2020')
 // console.log(year.value)
 // year.value = 2024

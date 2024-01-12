@@ -5,31 +5,20 @@
       text-color="#fff"
       active-text-color="#d56008"
       background-color="#262626"
+      router
       :collapse="collapse"
   >
-    <el-sub-menu index="1">
-      <template #title>
-        <el-icon>
-          <location/>
-        </el-icon>
-        <span>Navigator One</span>
-      </template>
-      <el-menu-item-group>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-    </el-sub-menu>
-    <el-menu-item index="2">
+    <el-menu-item :index="{name: 'test'}" >
       <el-icon>
         <icon-menu/>
       </el-icon>
-      <template #title>Navigator Two</template>
+      <template #title>Test</template>
     </el-menu-item>
-    <el-menu-item index="4">
+    <el-menu-item :index="{name: 'main'}">
       <el-icon>
         <setting/>
       </el-icon>
-      <template #title>Navigator Four</template>
+      <template #title>Main</template>
     </el-menu-item>
 
     <el-button @click="isCollapse" type="text" size="large">
@@ -59,6 +48,10 @@ const isCollapse = () => collapse.value = !collapse.value
   @media(max-width: $large-screen-up) {
     display: none;
   }
+}
+
+.el-menu-vertical-demo {
+  height: 100vh;
 }
 
 .el-menu-vertical-demo:not(.el-menu--expand) {
