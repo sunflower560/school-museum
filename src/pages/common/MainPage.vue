@@ -1,5 +1,13 @@
 <template>
   <div class="main-page">
+    <el-button @click="addCount">
+      {{ count }}
+    </el-button>
+    <el-button @click="mutateDeeply">
+      {{obj.nested.count}}
+      {{obj.arr}}
+    </el-button>
+    {{ state.count }}
     <div class="main-page-main">
       <h1>{{$t('museum.InfoMuseum')}}</h1>
       <h2>
@@ -63,6 +71,33 @@ import {computed, reactive, Ref, ref, watchEffect} from 'vue'
 import {Document, Location, Setting, Menu as IconMenu,} from "@element-plus/icons-vue";
 
 const activeName = ref('first')
+
+const state = reactive({ count: 0 })
+
+const count = ref(0)
+
+const stateTo = reactive({
+  count
+})
+console.log(state.count) // 0
+stateTo.count = 1
+console.log(count.value) // 1
+const addCount = () => {
+  count.value++
+}
+
+const obj = ref({
+  nested: { count: 0 },
+  arr: [ 'baz', 'bar' ]
+})
+const mutateDeeply = () => {
+  obj.value.nested.count++
+  obj.value.arr.push('nestle')
+}
+
+const raw = {}
+const proxy = reactive(raw)
+console.log(proxy === raw) // false
 
 
 // interface Author {
