@@ -2,9 +2,11 @@
   "common": {
     "Main": "Main",
     "SchoolMuseum8": "School №8 museum",
-    "Pages": "Pages"
+    "Pages": "Pages",
+    "SchoolHistory": "School history"
   },
   "museum": {
+    "MuseumExhibition": "Museum exhibition",
     "InfoMuseum": "Information about the museum exhibition",
     "SchoolHistory": "History of the school in the history of the city",
     "MuseumExposition": "Museum exposition",

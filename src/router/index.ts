@@ -14,14 +14,14 @@ const router = createRouter({
       component: () => import('@/pages/common/MainPage.vue')
     },
     {
-      path: '/test',
-      name: 'test',
+      path: '/school-history',
+      name: 'school-history',
       meta:{
         layout:{
           default:'empty-layout'
         }
       },
-      component: () => import('@/pages/common/TestPage.vue')
+      component: () => import('@/pages/common/SchoolHistory.vue')
     }
   ]
 })

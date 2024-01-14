@@ -1,6 +1,6 @@
 <template>
     <div class="main-page">
-      TEEST
+      School History
     </div>
 </template>
 

@@ -8,23 +8,23 @@
       router
       :collapse="collapse"
   >
-    <el-menu-item :index="{name: 'test'}" >
+    <el-menu-item :route="{name: 'main'}" index="2">
       <el-icon>
-        <icon-menu/>
+        <Document />
       </el-icon>
-      <template #title>Test</template>
+      <template #title>{{$t('museum.MuseumExhibition')}}</template>
     </el-menu-item>
-    <el-menu-item :index="{name: 'main'}">
+    <el-menu-item :route="{name: 'school-history'}" index="4" >
       <el-icon>
-        <setting/>
+        <House />
       </el-icon>
-      <template #title>Main</template>
+      <template #title>{{$t('common.SchoolHistory')}}</template>
     </el-menu-item>
 
     <el-button @click="isCollapse" type="text" size="large">
       <el-icon size="large">
         <el-icon>
-          <Back/>
+          <Back />
         </el-icon>
       </el-icon>
     </el-button>
@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import {ArrowLeft, ArrowRight, Location, Setting, Back, Menu as IconMenu,} from "@element-plus/icons-vue";
+import {ArrowLeft, ArrowRight, Location, Setting, Document, Back, House, Menu as IconMenu,} from "@element-plus/icons-vue";
 import {computed, Ref, ref} from "vue";
 
 const collapse: Ref<boolean> = ref(false)

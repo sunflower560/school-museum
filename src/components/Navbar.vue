@@ -22,8 +22,8 @@
 
     <el-drawer v-model="drawer" :title="$t('common.Pages')" size="55vh">
           <div class="navbar-content">
-            <router-link :to="{name: 'test'}">Test</router-link>
-            <router-link :to="{name: 'main'}">{{$t('common.Main')}}</router-link>
+            <router-link :to="{name: 'main'}">{{$t('museum.MuseumExhibition')}}</router-link>
+            <router-link :to="{name: 'school-history'}">{{$t('common.SchoolHistory')}}</router-link>
           </div>
     </el-drawer>
   </div>

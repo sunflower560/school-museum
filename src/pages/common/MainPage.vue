@@ -1,13 +1,5 @@
 <template>
   <div class="main-page">
-    <el-button @click="addCount">
-      {{ count }}
-    </el-button>
-    <el-button @click="mutateDeeply">
-      {{obj.nested.count}}
-      {{obj.arr}}
-    </el-button>
-    {{ state.count }}
     <div class="main-page-main">
       <h1>{{$t('museum.InfoMuseum')}}</h1>
       <h2>

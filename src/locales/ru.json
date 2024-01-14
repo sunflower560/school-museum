@@ -2,9 +2,11 @@
   "common": {
     "Main": "Главная",
     "SchoolMuseum8": "Музей школы №8",
-    "Pages": "Страницы"
+    "Pages": "Страницы",
+    "SchoolHistory": "История школы"
   },
   "museum": {
+    "MuseumExhibition": "Музейная экспозиция",
     "InfoMuseum": "Информация о музейной экспозиции",
     "SchoolHistory": "История школы в истории города",
     "MuseumExposition": "Экспозиция музея",
