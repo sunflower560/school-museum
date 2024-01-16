@@ -14,7 +14,7 @@
       </el-icon>
       <template #title>{{$t('museum.MuseumExhibition')}}</template>
     </el-menu-item>
-    <el-menu-item :route="{name: 'school-history'}" index="4" >
+    <el-menu-item :route="{name: 'school-history'}" index="4">
       <el-icon>
         <House />
       </el-icon>
@@ -23,7 +23,7 @@
 
     <el-button @click="isCollapse" type="text" size="large">
       <el-icon size="large">
-        <el-icon>
+        <el-icon color="#d56008">
           <Back />
         </el-icon>
       </el-icon>
@@ -37,6 +37,7 @@ import {computed, Ref, ref} from "vue";
 
 const collapse: Ref<boolean> = ref(false)
 const isCollapse = () => collapse.value = !collapse.value
+
 </script>
 
 <style scoped lang="scss">
