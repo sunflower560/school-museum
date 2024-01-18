@@ -179,7 +179,6 @@ console.log(proxy === raw) // false
 
   &-content {
     h2 {
-      font-weight: $font_w_medium;
       margin-bottom: 1rem;
     }
 
