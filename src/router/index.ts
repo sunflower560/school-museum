@@ -22,6 +22,16 @@ const router = createRouter({
         }
       },
       component: () => import('@/pages/common/SchoolHistory.vue')
+    },
+    {
+      path: '/school-history-uniforms',
+      name: 'school-history-uniforms',
+      meta:{
+        layout:{
+          default:'empty-layout'
+        }
+      },
+      component: () => import('@/pages/common/HistorySchoolUniformsPage.vue')
     }
   ]
 })

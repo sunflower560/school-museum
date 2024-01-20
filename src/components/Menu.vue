@@ -10,21 +10,27 @@
   >
     <el-menu-item :route="{name: 'main'}" index="2">
       <el-icon>
-        <Document />
+        <Document/>
       </el-icon>
-      <template #title>{{$t('museum.MuseumExhibition')}}</template>
+      <template #title>{{ $t('museum.MuseumExhibition') }}</template>
     </el-menu-item>
     <el-menu-item :route="{name: 'school-history'}" index="4">
       <el-icon>
-        <House />
+        <School/>
       </el-icon>
-      <template #title>{{$t('common.SchoolHistory')}}</template>
+      <template #title>{{ $t('common.SchoolHistory') }}</template>
+    </el-menu-item>
+    <el-menu-item :route="{name: 'school-history-uniforms'}" index="6">
+      <el-icon>
+        <UserFilled/>
+      </el-icon>
+      <template #title>{{ $t('common.historyUniforms') }}</template>
     </el-menu-item>
 
     <el-button @click="isCollapse" type="text" size="large">
       <el-icon size="large">
         <el-icon color="#d56008">
-          <Back />
+          <Back/>
         </el-icon>
       </el-icon>
     </el-button>
@@ -32,7 +38,18 @@
 </template>
 
 <script setup lang="ts">
-import {ArrowLeft, ArrowRight, Location, Setting, Document, Back, House, Menu as IconMenu,} from "@element-plus/icons-vue";
+import {
+  ArrowLeft,
+  ArrowRight,
+  Location,
+  Setting,
+  Document,
+  Back,
+  UserFilled,
+  School,
+  House,
+  Menu as IconMenu,
+} from "@element-plus/icons-vue";
 import {computed, Ref, ref} from "vue";
 
 const collapse: Ref<boolean> = ref(false)

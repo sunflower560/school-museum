@@ -24,6 +24,7 @@
           <div class="navbar-content">
             <router-link :to="{name: 'main'}">{{$t('museum.MuseumExhibition')}}</router-link>
             <router-link :to="{name: 'school-history'}">{{$t('common.SchoolHistory')}}</router-link>
+            <router-link :to="{name: 'school-history-uniforms'}">{{$t('common.historyUniforms')}}</router-link>
           </div>
     </el-drawer>
   </div>
