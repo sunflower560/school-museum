@@ -20,7 +20,7 @@
       {{$t('common.Pages')}}
     </el-button>
 
-    <el-drawer v-model="drawer" :title="$t('common.Pages')" size="50vh">
+    <el-drawer v-model="drawer" :title="$t('common.Pages')" size="50vh" style="--el-drawer-bg-color: #262626">
           <div class="navbar-content">
             <router-link :to="{name: 'main'}">{{$t('museum.MuseumExhibition')}}</router-link>
             <router-link :to="{name: 'school-history'}">{{$t('common.SchoolHistory')}}</router-link>

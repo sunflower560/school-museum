@@ -1,6 +1,7 @@
 <template>
   <div class="school-history-page">
     <h1 class="school-history-page-title">{{ $t('common.SchoolHistory') }}</h1>
+
     <p>
       Первая социалистическая школа в городе Могилёве, которая получила порядковый номер 23, приняла в свои стены
       учащихся с 1-го по 8-й класс (сентябрь 1939 года)
@@ -76,11 +77,56 @@
         </p>
       </div>
     </div>
+
+    <div class="school-history-page-collapse">
+      <el-collapse v-model="collapseDate" accordion>
+        <el-collapse-item title="1962 г." name="1">
+          <div>
+            Силами учащихся ПТУ-58, учителей труда и учащихся школы №8 был построен второй одноэтажный корпус, в котором размещались
+            <br>
+             трудовые мастерские, группа продлённого дня, кабинет химии, спортзал.
+            <br>
+            Так же в школе продолжали работать участники войны: Коротким Андрей Маркович, Хальчуков Роман Семёнович
+          </div>
+        </el-collapse-item>
+        <el-collapse-item title="1991 г." name="2">
+          <div>
+            Был снесён второй корпус и заложен фундамент нового здания школы. Около 10 лет работы практически не велись.
+            <br>
+            Учителя и ученики неоднократно выступали с акциями за продолжение строительства
+          </div>
+        </el-collapse-item>
+        <el-collapse-item title="2002 г." name="3">
+          <div>
+            1 сентября директор Клепчуков Валерий Михайлович получил символический ключ и учащиеся переступили порог новой школы
+          </div>
+          <el-image src="/src/assets/img/klepchukov.jpg" style="width: 210px; height: 300px"/>
+        </el-collapse-item>
+        <el-collapse-item title="2014 г." name="4">
+          <div>
+            20 августа старое здание школы было взорвано, так как оно находилось в аварийном состоянии и не подлежало ремонту
+            <br>
+            С 20 мая по 13 июня 2023 года директором был Александр Иванович Корзун
+            <br>
+          </div>
+          <el-image src="/src/assets/img/korzun.jpg" style="width: 210px; height: 300px"/>
+        </el-collapse-item>
+        <el-collapse-item title="2023 г." name="5">
+          <div>
+            14 июня директором средней школы назначена Ирина Леонидовна Рыбакова
+          </div>
+        </el-collapse-item>
+      </el-collapse>
+    </div>
+
   </div>
 </template>
 
 <script setup lang="ts">
 import {computed, Ref, ref, UnwrapRef} from 'vue'
+
+
+const collapseDate = ref('1')
 
 </script>
 
@@ -90,6 +136,23 @@ import {computed, Ref, ref, UnwrapRef} from 'vue'
 .school-history-page {
   text-align: center;
   padding: $size;
+
+  .el-image {
+    border-radius: $radius_medium;
+  }
+
+  &-collapse {
+    text-align: left;
+    margin-top: $radius_big;
+
+    .el-collapse {
+      --el-collapse-content-bg-color: #181818;
+      --el-collapse-border-color: #414141;
+      --el-collapse-content-text-color: white;
+      --el-collapse-header-bg-color: #181818;
+      --el-collapse-header-text-color: #F5853C
+    }
+  }
 
   &-director {
     @media(max-width: $small-screen-up) {
@@ -104,7 +167,6 @@ import {computed, Ref, ref, UnwrapRef} from 'vue'
 
     .el-image {
       margin-right: $radius_medium;
-      border-radius: $radius_medium;
     }
 
     div {
@@ -124,7 +186,6 @@ import {computed, Ref, ref, UnwrapRef} from 'vue'
 
     .el-image {
       margin-right: $radius_medium;
-      border-radius: $radius_medium;
     }
 
     p {
