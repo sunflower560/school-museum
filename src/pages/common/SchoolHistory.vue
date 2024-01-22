@@ -144,6 +144,7 @@ const collapseDate = ref('1')
   &-collapse {
     text-align: left;
     margin-top: $radius_big;
+    margin-bottom: $radius_big;
 
     .el-collapse {
       --el-collapse-content-bg-color: #181818;

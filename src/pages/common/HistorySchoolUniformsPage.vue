@@ -1,17 +1,18 @@
 <template>
   <div class="history-school-uniforms-page">
-    <el-tag effect="dark" type="danger" size="large">MIN: {{ minItemValue }}</el-tag>
-    <el-tag effect="dark" type="success" size="large">MAX: {{ maxItemValue }}</el-tag>
+<!--    <el-tag effect="dark" type="danger" size="large">MIN: {{ minItemValue }}</el-tag>-->
+<!--    <el-tag effect="dark" type="success" size="large">MAX: {{ maxItemValue }}</el-tag>-->
 
-    <el-tag effect="dark" type="warning" size="large">SUM: {{ itemsSumma }}</el-tag>
-    <el-tag effect="light" type="success" size="large">ODD: {{ oddItemCount }}</el-tag>
-    <el-tag effect="light" type="danger" size="large">EVEN: {{ evenItemCount }}</el-tag>
+<!--    <el-tag effect="dark" type="warning" size="large">SUM: {{ itemsSumma }}</el-tag>-->
+<!--    <el-tag effect="light" type="success" size="large">ODD: {{ oddItemCount }}</el-tag>-->
+<!--    <el-tag effect="light" type="danger" size="large">EVEN: {{ evenItemCount }}</el-tag>-->
 
     <el-button @click="addNewItem" type="primary">Add new number</el-button>
     <el-button @click="clearItems" type="danger">Clear Array</el-button>
-    <el-row v-for="item in items" :key="item">
+
+    <el-row v-for="item in itemsSources" :key="item">
       <el-col>
-        <p>{{ item }}</p>
+        <p>{{item.value}} <el-checkbox v-model="item.isActive" :label="item.isActive">{{item.isActive}}</el-checkbox></p>
       </el-col>
     </el-row>
   </div>
@@ -20,20 +21,56 @@
 <script setup lang="ts">
 import {computed, ref} from "vue";
 
-const items = ref<Array<number>>([])
+interface IItem{
+  value:number
+  isActive:boolean
+}
 
-const addNewItem = () => items.value.push(Math.floor(Math.random() * 100))
-const clearItems = () => items.value = []
+const itemsSources = ref<Array<IItem>>([
+  {
+    value: 16,
+    isActive: true
+  }
+])
 
-const maxItemValue = computed(() => Number.isFinite(Math.max(...items.value)) ? Math.max(...items.value) : 0)
+const items = computed(() => {
+  const filteredItems = []
+  for(let i = 0; i < itemsSources.value.length; i++) {
+    if(itemsSources.value[i]?.isActive) {
+      filteredItems.push(itemsSources.value[i])
+    }
+  }
+  return filteredItems
+})
 
-const minItemValue = computed(() => Number.isFinite(Math.min(...items.value)) ? Math.min(...items.value) : 0)
+const addNewItem = () => itemsSources.value.push({value: Math.floor(Math.random() * 100), isActive: true})
+const clearItems = () => itemsSources.value = []
+//
+// const maxItemValue = computed(() => !itemsSources.value.length ? 0 : Math.max(...itemsSources.value))
+// const minItemValue = computed(() => !itemsSources.value.length ? 0 : Math.min(...itemsSources.value))
+//
+// const itemsSumma = computed(() => itemsSources.value.reduce((previousValue, currentValue) => previousValue + currentValue, 0))
+//
+// const oddItemCount = computed(() => itemsSources.value.filter((number: number) => number % 2 !== 0).length)
+//
+// const evenItemCount = computed(() => itemsSources.value.length - oddItemCount.value)
 
-const itemsSumma = computed(() => items.value.reduce((previousValue, currentValue) => previousValue + currentValue, 0))
 
-const oddItemCount = computed(() => items.value.filter((number: number) => number % 2 !== 0).length)
 
-const evenItemCount = computed(() => items.value.length - oddItemCount.value)
+// const maxItemValue = computed(() => {
+//   let max = 0
+//   items.value.forEach((item, i, items) => items[i].value > max ? max = items[i].value : 0)
+//   return max
+// })
+//
+// const minItemValue = computed(() => {
+//   let min = 100
+//   if (!items.value.length) {
+//     min = 0
+//   }
+//   items.value.forEach((item, i, items) => items[i].value < min ? min = items[i].value : 0)
+//   return min
+// })
 </script>
 
 <style lang="scss">
