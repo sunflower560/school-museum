@@ -45,11 +45,9 @@ const itemsFilterMap = computed(() => {
   return filterItemValues
 })
 
-const items = computed(() => {
-  return itemsSources.value
+const items = computed(() => itemsSources.value
       .filter(item => item?.isActive && typeof item?.value === 'number')
-      .map(item => item.value)
-})
+      .map(item => item.value))
 
 
 const maxItemValue = computed(() => !items.value.length ? 0 : Math.max(...items.value))

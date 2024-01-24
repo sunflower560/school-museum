@@ -35,5 +35,29 @@
     "Graduates": "About the outstanding graduates of our school",
     "Pioneer": "History of the pioneer and Komsomol organization",
     "SchoolUniform": "History of school uniforms and school supplies"
+  },
+  "SchoolMuseum": {
+    "FirstSocialistSchool": "The first socialist school in the city of Mogilev, which received serial number 23, accepted students from 1st to 8th grade (September 1939)",
+    "FirstSocialistSchoolMogilev": "Once upon a time, on the site where our school is located, there was a rustling birch grove. But in 1939 a building was erected here the first socialist school in the city of Mogilev, which received the serial number 23. This is how the story begins our school. The school was built in the village of Chapaevka, which was only included in the city in the 30s it was included in the city limits",
+    "OneDirector": "First director Minin Zakhar Matveevich",
+    "OneDirectorName": "Minin Z.M.",
+    "OneDirectorDescription": "The first director of the new school was Minin Zakhar Matveevich, he left this position because he went to Finnish war. The fate of Z.M. Minin decreed that he became a participant first in the Finnish War, and then in the Great Patriotic, after which he returned to Mogilev, but did not appear within the walls of our school until 1989 of the year",
+    "TwoDirector": "Second director Kazimirsky Pavel Kirillovich",
+    "TwoDirectorName": "Kazimirsky P.K.",
+    "TwoDirectorDescription": "In 1940, the second director was Pavel Kirillovich Kazimirsky, who headed secondary school No. 23 until the tragic 1941 of the year. At the beginning of the Great Patriotic War, P.K. Kazimirsky, fulfilling a special task of the NKVD, disappeared without lead",
+    "Year": "June 28, 1944",
+    "DirectorOlensky": "Olensky P.L.",
+    "DirectorOlenskyDescription": "After the liberation of Mogilev, the city administration began preparing the school for the school year. As a result of the reform, it received serial number 8 instead of 23. Pyotr Lvovich Olensky (1944-1957), a participant in the partisan movement, was appointed director. In 1947, the first graduation of 10th graders from secondary school No. 8 took place. Kuleshova Anastasia Mikhailovna, Honored Teacher of the Republic of Belarus among students (1949).",
+    "YearDescription": "At the school there was a Komsomol organization, a pioneer squad and units of October soldiers. A photograph of members of the Komsomol cell of Secondary School No. 23 (now 8) in 1941 has been preserved. The photo shows 6 people. After the end of the war, only two remained alive... The students sought to get an education and find their place in this life, but the war cruelly interfered with their plans. Graduates of our school, like all Soviet citizens, entered the fight against Nazi Germany.",
+    "YearDescriptionDefenseMogilev": "Defense of Mogilev, one of the lines of which took place in the area of the Shklovskoe highway, where a police battalion under the command of Captain Vladimirov heroically fought near the village of Gai. Unfortunately, Soviet soldiers were forced to retreat and the fighting continued on the streets of the city. Pechkurova V.P., a resident of our area, recalls that the militia and the surviving policemen of the police battalion occupied the building of our school and held its defense for seven days. The Germans were able to capture the school only when the last soldier who defended it died. The entire school yard was littered with spent cartridges. The number of dead on both sides was so great that the Germans had to ask the local population to take the corpses to neighboring villages and bury them there.",
+    "PTY": "With the help of students of vocational school-58, labor teachers and students of school No. 8, a second one-story building was built, which housed",
+    "PTYTwo": "labor workshops, extended day group, chemistry room, gym.",
+    "PTYThree": "War veterans also continued to work at the school: Andrei Markovich Korotkiy, Roman Semenovich Khalchukov",
+    "DemolishedBuilding": "The second building was demolished and the foundation of a new school building was laid. Almost no work was done for about 10 years.",
+    "DemolishedBuildingTwo": "Teachers and students have repeatedly protested for the continuation of construction",
+    "SymbolicKey": "On September 1, director Valery Mikhailovich Klepchukov received a symbolic key and students crossed the threshold of the new school",
+    "SchoolBlown": "On August 20, the old school building was blown up because it was in disrepair and could not be repaired.",
+    "SchoolBlownTwo": "From May 20 to June 13, 2023, the director was Alexander Ivanovich Korzun",
+    "DirectorIrinaLeonidovnaRybakova": "On June 14, Irina Leonidovna Rybakova was appointed director of the secondary school."
   }
 }
