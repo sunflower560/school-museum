@@ -8,6 +8,12 @@
          <el-button @click="addNewHuman" type="success">
            Add human
          </el-button>
+         <el-button @click="peopleSources = allManHuman" type="primary">
+           All Man
+         </el-button>
+         <el-button @click="peopleSources = allWomanHuman" type="primary">
+           All Woman
+         </el-button>
          <br>
          <el-tag effect="dark" type="warning" size="large">SUM: {{ peopleSalarySumma }}</el-tag>
          <el-tag effect="light" type="success" size="large">MAN: {{ manHumanCount }}</el-tag>
@@ -101,6 +107,8 @@ const removeHuman = (id: number) => peopleSources.value = peopleSources.value.fi
 
 const manHumanCount = computed(() => people.value.filter(human => human.gender === 'Man').length)
 const womanHumanCount = computed(() => people.value.length - manHumanCount.value)
+const allManHuman = computed(() => peopleSources.value.filter(human => human.gender === 'Man'))
+const allWomanHuman = computed(() => peopleSources.value.filter(human => human.gender === 'Woman'))
 
 
 
