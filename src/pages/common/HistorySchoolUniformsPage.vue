@@ -4,29 +4,23 @@
     <el-row>
       <el-col :lg="9">
         <div class="history-school-uniforms-page-people">
-       <div class="history-school-uniforms-page-people-management">
-         <el-button @click="addNewHuman" type="success">
-           Add human
-         </el-button>
-         <el-button @click="peopleSources = allManHuman" type="primary">
-           All Man
-         </el-button>
-         <el-button @click="peopleSources = allWomanHuman" type="primary">
-           All Woman
-         </el-button>
-         <br>
-         <el-tag effect="dark" type="warning" size="large">SUM: {{ peopleSalarySumma }}</el-tag>
-         <el-tag effect="light" type="success" size="large">MAN: {{ manHumanCount }}</el-tag>
-         <el-tag effect="light" type="danger" size="large">WOMAN: {{ womanHumanCount }}</el-tag>
-       </div>
+          <div class="history-school-uniforms-page-people-management">
+            <el-button @click="addNewHuman" type="success">Add human</el-button>
+            <el-button @click="peopleSources = allManHuman" type="primary">All Man</el-button>
+            <el-button @click="peopleSources = allWomanHuman" type="primary">All Woman</el-button>
+            <br>
+            <el-tag effect="dark" type="warning" size="large">SUM: {{ peopleSalarySumma.toFixed(2) }}</el-tag>
+            <el-tag effect="light" type="success" size="large">MAN: {{ manHumanCount }}</el-tag>
+            <el-tag effect="light" type="danger" size="large">WOMAN: {{ womanHumanCount }}</el-tag>
+          </div>
           <ul v-for="human in peopleSources" :key="human.id">
             <li>
               <el-button @click="removeHuman(human.id)" type="danger" size="small">
-                <p>X</p>
-              </el-button>
-              {{human.id}}) {{human.name}} {{human.lastName}} {{human.age}}, salary: {{human.salary}} ₽
-              <el-checkbox @click="items" v-model="human.isActive" :label="human.isActive">{{human.isActive}}</el-checkbox>
-              {{human.gender}}
+                <p>X</p></el-button>
+              {{ human.id }}) {{ human.name }} {{ human.lastName }} {{ human.age }}, salary: {{ human.salary.toFixed(2) }} ₽
+              <el-checkbox @click="items" v-model="human.isActive" :label="human.isActive">{{ human.isActive }}
+              </el-checkbox>
+              {{ human.gender }}
             </li>
             <br>
           </ul>
@@ -46,7 +40,10 @@
 
         <el-row v-for="item in itemsSources" :key="item">
           <el-col>
-            <p>{{item.value}} <el-checkbox @click="items" v-model="item.isActive" :label="item.isActive">{{item.isActive}}</el-checkbox></p>
+            <p>{{ item.value }}
+              <el-checkbox @click="items" v-model="item.isActive" :label="item.isActive">{{ item.isActive }}
+              </el-checkbox>
+            </p>
           </el-col>
         </el-row>
       </el-col>
@@ -67,15 +64,16 @@ interface IHuman {
   gender: string
 }
 
-interface IItem{
-  value:number
-  isActive:boolean
+interface IItem {
+  value: number
+  isActive: boolean
 }
+
 const namesMan = ['Max', 'Vlad', 'Andrei']
 const namesWoman = ['Sofia', 'Elena', 'Maria']
 const lastNames = ['Sidorenko', 'Aksenchik', 'Trifonova', 'Sinitsen']
-const ages = [15, 25, 22, 42, 35, 38, 32, 56, 20, 19, 18, 24]
-const salary = [30000, 25000, 27000, 80000, 15000, 200000, 400000, 45000, 37000]
+// const ages = [15, 25, 22, 42, 35, 38, 32, 56, 20, 19, 18, 24]
+// const salary = [30000, 25000, 27000, 80000, 15000, 200000, 400000, 45000, 37000]
 
 const peopleSources = ref<Array<IHuman>>([
   {id: 1, name: 'Max', lastName: 'Sidorenko', age: 27, salary: 30000, isActive: true, gender: 'Man'},
@@ -96,8 +94,8 @@ const addNewHuman = () => {
     id: humanId,
     name: name,
     lastName: lastNames[Math.floor(Math.random() * 4)],
-    age: ages[Math.floor(Math.random() * 12)],
-    salary: salary[Math.floor(Math.random() * 9)],
+    age: Math.floor(Math.random() * 56),
+    salary: Math.random() * 500000,
     isActive: true,
     gender: gender
   })
@@ -109,8 +107,6 @@ const manHumanCount = computed(() => people.value.filter(human => human.gender =
 const womanHumanCount = computed(() => people.value.length - manHumanCount.value)
 const allManHuman = computed(() => peopleSources.value.filter(human => human.gender === 'Man'))
 const allWomanHuman = computed(() => peopleSources.value.filter(human => human.gender === 'Woman'))
-
-
 
 
 
@@ -127,15 +123,15 @@ const clearItems = () => itemsSources.value = []
 //filter + map
 const itemsFilterMap = computed(() => {
   const filterItemValues = []
-  for(let i = 0; i < itemsSources.value.length; i++)
-    if(itemsSources.value[i]?.isActive && typeof itemsSources.value[i]?.value === 'number')
+  for (let i = 0; i < itemsSources.value.length; i++)
+    if (itemsSources.value[i]?.isActive && typeof itemsSources.value[i]?.value === 'number')
       filterItemValues.push(itemsSources.value[i].value)
   return filterItemValues
 })
 
 const items = computed(() => itemsSources.value
-      .filter(item => item?.isActive && typeof item?.value === 'number')
-      .map(item => item.value))
+    .filter(item => item?.isActive && typeof item?.value === 'number')
+    .map(item => item.value))
 
 
 const maxItemValue = computed(() => !items.value.length ? 0 : Math.max(...items.value))
@@ -146,7 +142,6 @@ const itemsSumma = computed(() => items.value.reduce((previousValue, currentValu
 const oddItemCount = computed(() => items.value.filter((number: number) => number % 2 !== 0).length)
 
 const evenItemCount = computed(() => items.value.length - oddItemCount.value)
-
 
 
 // filter
@@ -185,9 +180,11 @@ const evenItemCount = computed(() => items.value.length - oddItemCount.value)
   ul {
     list-style-type: none;
   }
+
   &-people {
     &-management {
       margin-bottom: $radio_average;
+
       .el-tag {
         margin-right: $radio_average;
         margin-top: $radius_medium;
