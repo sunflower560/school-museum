@@ -13,14 +13,14 @@
             <el-tag effect="light" type="success" size="large">MAN: {{ manHumanCount }}</el-tag>
             <el-tag effect="light" type="danger" size="large">WOMAN: {{ womanHumanCount }}</el-tag>
           </div>
-          <ul v-for="human in peopleSources" :key="human.id">
+          <el-input v-model="searchHuman" />
+          <ul v-for="human in filteredPeople" :key="human.id">
             <li>
               <el-button @click="removeHuman(human.id)" type="danger" size="small">
                 <p>X</p></el-button>
-              {{ human.id }}) {{ human.name }} {{ human.lastName }} {{ human.age }}, salary: {{ human.salary.toFixed(2) }} ₽
-              <el-checkbox @click="items" v-model="human.isActive" :label="human.isActive">{{ human.isActive }}
-              </el-checkbox>
-              {{ human.gender }}
+              {{human.id}}) {{human.name}} {{human.lastName}} {{human.age}}, salary: {{human.salary.toFixed(2)}} ₽
+              <el-checkbox @click="items" v-model="human.isActive" :label="human.isActive">{{human.isActive }}</el-checkbox>
+              {{human.gender}}
             </li>
             <br>
           </ul>
@@ -52,7 +52,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import {computed, reactive, ref} from "vue";
 
 interface IHuman {
   id: number,
@@ -69,11 +69,19 @@ interface IItem {
   isActive: boolean
 }
 
+const searchHuman = ref('')
+
+const fieldHuman: Array<string> = ['id', 'age', 'salary', 'name', 'lastName', 'gender']
+
+const filteredPeople = computed(() => peopleSources.value.filter(human => {
+      return fieldHuman.some(field => typeof human[field] === 'string' || 'number' ? human[field]
+          .toString().toUpperCase().includes(searchHuman.value.toUpperCase()) : '')
+    })
+)
+
 const namesMan = ['Max', 'Vlad', 'Andrei']
 const namesWoman = ['Sofia', 'Elena', 'Maria']
 const lastNames = ['Sidorenko', 'Aksenchik', 'Trifonova', 'Sinitsen']
-// const ages = [15, 25, 22, 42, 35, 38, 32, 56, 20, 19, 18, 24]
-// const salary = [30000, 25000, 27000, 80000, 15000, 200000, 400000, 45000, 37000]
 
 const peopleSources = ref<Array<IHuman>>([
   {id: 1, name: 'Max', lastName: 'Sidorenko', age: 27, salary: 30000, isActive: true, gender: 'Man'},
@@ -107,7 +115,6 @@ const manHumanCount = computed(() => people.value.filter(human => human.gender =
 const womanHumanCount = computed(() => people.value.length - manHumanCount.value)
 const allManHuman = computed(() => peopleSources.value.filter(human => human.gender === 'Man'))
 const allWomanHuman = computed(() => peopleSources.value.filter(human => human.gender === 'Woman'))
-
 
 
 const itemsSources = ref<Array<IItem>>([
@@ -182,6 +189,11 @@ const evenItemCount = computed(() => items.value.length - oddItemCount.value)
   }
 
   &-people {
+    .el-input {
+      width: $radius_big * 6;
+      margin-bottom: $radio_average;
+    }
+
     &-management {
       margin-bottom: $radio_average;
 
