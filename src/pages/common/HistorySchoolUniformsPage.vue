@@ -1,207 +1,118 @@
 <template>
   <div class="history-school-uniforms-page">
+    <h1>История школьной формы</h1>
 
-    <el-row>
-      <el-col :lg="9">
-        <div class="history-school-uniforms-page-people">
-          <div class="history-school-uniforms-page-people-management">
-            <el-button @click="addNewHuman" type="success">Add human</el-button>
-            <el-button @click="peopleSources = allManHuman" type="primary">All Man</el-button>
-            <el-button @click="peopleSources = allWomanHuman" type="primary">All Woman</el-button>
-            <br>
-            <el-tag effect="dark" type="warning" size="large">SUM: {{ peopleSalarySumma.toFixed(2) }}</el-tag>
-            <el-tag effect="light" type="success" size="large">MAN: {{ manHumanCount }}</el-tag>
-            <el-tag effect="light" type="danger" size="large">WOMAN: {{ womanHumanCount }}</el-tag>
+    <div class="history-school-uniforms-page-content">
+      <div>
+        <p><span>Школьная форма</span> — обязательная повседневная форма одежды для учеников
+          во время их нахождения в школе и на официальных школьных мероприятиях вне школы</p>
+      </div>
+
+      <div class="history-school-uniforms-page-content-card">
+        <el-card style="--el-card-bg-color: #3d3d3d; --el-card-border-color: #646464">
+          <template #header>
+            <div class="card-header">
+              <span>Школьная форма в СССР</span>
+              <el-icon><School /></el-icon>
+            </div>
+          </template>
+          <div class="card-content">
+            <el-image src="/src/assets/img/SchoolSssrForm.jpg" />
           </div>
-          <el-input v-model="searchHuman" />
-          <ul v-for="human in filteredPeople" :key="human.id">
-            <li>
-              <el-button @click="removeHuman(human.id)" type="danger" size="small">
-                <p>X</p></el-button>
-              {{human.id}}) {{human.name}} {{human.lastName}} {{human.age}}, salary: {{human.salary.toFixed(2)}} ₽
-              <el-checkbox @click="items" v-model="human.isActive" :label="human.isActive">{{human.isActive }}</el-checkbox>
-              {{human.gender}}
-            </li>
-            <br>
-          </ul>
-        </div>
-      </el-col>
-
-      <el-col :lg="15">
-        <el-tag effect="dark" type="danger" size="large">MIN: {{ minItemValue }}</el-tag>
-        <el-tag effect="dark" type="success" size="large">MAX: {{ maxItemValue }}</el-tag>
-
-        <el-tag effect="dark" type="warning" size="large">SUM: {{ itemsSumma }}</el-tag>
-        <el-tag effect="light" type="success" size="large">ODD: {{ oddItemCount }}</el-tag>
-        <el-tag effect="light" type="danger" size="large">EVEN: {{ evenItemCount }}</el-tag>
-
-        <el-button @click="addNewItem" type="primary">Add new number</el-button>
-        <el-button @click="clearItems" type="danger">Clear Array</el-button>
-
-        <el-row v-for="item in itemsSources" :key="item">
-          <el-col>
-            <p>{{ item.value }}
-              <el-checkbox @click="items" v-model="item.isActive" :label="item.isActive">{{ item.isActive }}
-              </el-checkbox>
+          <template #footer>
+            <p>
+              1918 году гимназическая форма дореволюционной России была признана буржуазным
+              пережитком и отменена вместе с многими другими разумными наработками в области образования
             </p>
-          </el-col>
-        </el-row>
-      </el-col>
-    </el-row>
+          </template>
+        </el-card>
+
+        <el-card style="--el-card-bg-color: #3d3d3d; --el-card-border-color: #646464">
+          <template #header>
+            <div class="card-header">
+              <span>Школьная форма в СССР</span>
+            </div>
+          </template>
+          <div>
+            С точки зрения «классовой борьбы» старая форма считалась
+            символом принадлежности к высшим сословиям (была даже презрительная
+            кличка для сентиментальной девочки — «гимназистка»). С другой стороны — форма символизировала
+            абсолютную несвободу ученика, его униженное и подневольное положение
+          </div>
+        </el-card>
+      </div>
+
+      <div class="history-school-uniforms-page-content-sssr">
+        <p>
+          Но у этого отказа от формы была и другая, более понятная,
+          подоплёка — бедность. Ученики ходили в школу в том, что могли
+          предоставить им родители, а государство в тот момент активно боролось
+          с разрухой, классовыми врагами и пережитками прошлого
+        </p>
+      </div>
+
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import {
+  School
+} from "@element-plus/icons-vue";
 import {computed, reactive, ref} from "vue";
 
-interface IHuman {
-  id: number,
-  name: string,
-  lastName: string,
-  age: number,
-  salary: number,
-  isActive: boolean,
-  gender: string
-}
-
-interface IItem {
-  value: number
-  isActive: boolean
-}
-
-const searchHuman = ref('')
-
-const fieldHuman: Array<string> = ['id', 'age', 'salary', 'name', 'lastName', 'gender']
-
-const filteredPeople = computed(() => peopleSources.value.filter(human => {
-      return fieldHuman.some(field => typeof human[field] === 'string' || 'number' ? human[field]
-          .toString().toUpperCase().includes(searchHuman.value.toUpperCase()) : '')
-    })
-)
-
-const namesMan = ['Max', 'Vlad', 'Andrei']
-const namesWoman = ['Sofia', 'Elena', 'Maria']
-const lastNames = ['Sidorenko', 'Aksenchik', 'Trifonova', 'Sinitsen']
-
-const peopleSources = ref<Array<IHuman>>([
-  {id: 1, name: 'Max', lastName: 'Sidorenko', age: 27, salary: 30000, isActive: true, gender: 'Man'},
-  {id: 2, name: 'Vlad', lastName: 'Aksenchik', age: 24, salary: 25000, isActive: true, gender: 'Man'},
-  {id: 3, name: 'Sofia', lastName: 'Trifonova', age: 31, salary: 27000, isActive: true, gender: 'Woman'},
-  {id: 4, name: 'Andrei', lastName: 'Sinitsen', age: 24, salary: 80000, isActive: true, gender: 'Man'}
-])
-
-const people = computed(() => peopleSources.value
-    .filter(human => human?.isActive && typeof human?.salary === 'number')
-    .map(human => ({salary: human.salary, gender: human.gender})))
-
-const addNewHuman = () => {
-  const humanId = peopleSources.value.length + 1
-  const name = [namesWoman, namesMan][Math.floor(Math.random() * 2)][Math.floor(Math.random() * 3)]
-  const gender = namesMan.includes(name) ? 'Man' : 'Woman'
-  peopleSources.value.push({
-    id: humanId,
-    name: name,
-    lastName: lastNames[Math.floor(Math.random() * 4)],
-    age: Math.floor(Math.random() * 56),
-    salary: Math.random() * 500000,
-    isActive: true,
-    gender: gender
-  })
-}
-const peopleSalarySumma = computed(() => people.value.reduce((previousSalary, currentSalary) => previousSalary + currentSalary.salary, 0))
-const removeHuman = (id: number) => peopleSources.value = peopleSources.value.filter(human => human.id !== id)
-
-const manHumanCount = computed(() => people.value.filter(human => human.gender === 'Man').length)
-const womanHumanCount = computed(() => people.value.length - manHumanCount.value)
-const allManHuman = computed(() => peopleSources.value.filter(human => human.gender === 'Man'))
-const allWomanHuman = computed(() => peopleSources.value.filter(human => human.gender === 'Woman'))
-
-
-const itemsSources = ref<Array<IItem>>([
-  {
-    value: 16,
-    isActive: true
-  }
-])
-
-const addNewItem = () => itemsSources.value.push({value: Math.floor(Math.random() * 100), isActive: true})
-const clearItems = () => itemsSources.value = []
-
-//filter + map
-const itemsFilterMap = computed(() => {
-  const filterItemValues = []
-  for (let i = 0; i < itemsSources.value.length; i++)
-    if (itemsSources.value[i]?.isActive && typeof itemsSources.value[i]?.value === 'number')
-      filterItemValues.push(itemsSources.value[i].value)
-  return filterItemValues
-})
-
-const items = computed(() => itemsSources.value
-    .filter(item => item?.isActive && typeof item?.value === 'number')
-    .map(item => item.value))
-
-
-const maxItemValue = computed(() => !items.value.length ? 0 : Math.max(...items.value))
-const minItemValue = computed(() => !items.value.length ? 0 : Math.min(...items.value))
-
-const itemsSumma = computed(() => items.value.reduce((previousValue, currentValue) => previousValue + currentValue, 0))
-
-const oddItemCount = computed(() => items.value.filter((number: number) => number % 2 !== 0).length)
-
-const evenItemCount = computed(() => items.value.length - oddItemCount.value)
-
-
-// filter
-// const items = computed(() => {
-//   const filteredItems = []
-//   for(let i = 0; i < itemsSources.value.length; i++) {
-//     if(itemsSources.value[i]?.isActive) {
-//       filteredItems.push(itemsSources.value[i])
-//     }
-//   }
-//   return filteredItems
-// })
 </script>
 
 <style lang="scss">
 @import '/src/styles/variables.scss';
 
 .history-school-uniforms-page {
-  //text-align: center;
-  padding: $size;
-  //&-odd {
-  //  display: flex;
-  //  color: $color_green;
-  //  div {
-  //    display: inline-block;
-  //    p {
-  //      margin-right: $radius_tiny;
-  //    }
-  //  }
-  //}
-
-  .el-tag {
-    margin-right: $radio_average;
-  }
-
-  ul {
-    list-style-type: none;
-  }
-
-  &-people {
-    .el-input {
-      width: $radius_big * 6;
-      margin-bottom: $radio_average;
+  text-align: center;
+  padding: $size_big;
+  &-content {
+    span {
+      color: $color_main_dark_2;
+      font-weight: $font_w_medium;
     }
 
-    &-management {
-      margin-bottom: $radio_average;
-
-      .el-tag {
-        margin-right: $radio_average;
-        margin-top: $radius_medium;
+      &-card {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        .el-card {
+          @media(max-width: 1000px) {
+            width: $drawer-width - 50;
+          }
+          margin-top: $radius_big;
+          margin-right: $radius_big;
+          width: $drawer-width - 50;
+          color: white;
+          .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+          .card-content {
+            display: flex;
+            justify-content: left;
+            .el-image {
+              width: $radius_big * 5;
+              height: $height-big;
+              border-radius: $radius_medium;
+              box-shadow: $size_tiny - 2 $size_tiny - 2 $radius_medium $radius_small / 5 gray;
+            }
+          }
+        }
       }
+
+    &-sssr {
+      text-align: left;
+      margin-top: $radius_big;
     }
+    margin-top: $radius_big;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
   }
 }
 </style>
