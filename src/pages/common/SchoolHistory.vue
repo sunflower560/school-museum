@@ -1,6 +1,6 @@
 <template>
   <div class="school-history-page">
-    <h1 class="school-history-page-title">{{ $t('common.SchoolHistory') }}</h1>
+    <h1 class="school-history-page-title">{{ $t('menu.resources.routes.schoolHistory') }}</h1>
 
     <p>
       {{ $t('SchoolMuseum.FirstSocialistSchool') }}
@@ -97,10 +97,11 @@
 
 <script setup lang="ts">
 import {computed, Ref, ref, UnwrapRef} from 'vue'
+import {useMounted} from "@vueuse/core/index";
 
 
 const collapseDate = ref('1')
-
+const isMounted = useMounted()
 </script>
 
 <style lang="scss">

@@ -1,0 +1,4 @@
+$namespace:live !default;
+@function get-var($var) {
+  @return var(--#{$namespace}-#{$var});
+}

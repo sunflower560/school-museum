@@ -1,0 +1,631 @@
+@use "common/icons" as *;
+
+@font-face {
+    font-family: '#{$md-icons-font-family}';
+    src:url('#{$md-icons-font-path}/#{$md-icons-font-family}.ttf?ij3o30') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+i.icon,[class^="icon-"], [class*=" icon-"] {
+    font-family: '#{$facade-icons-font-family}' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+i.icon-md,span.icon-md,[class^="icon-md-"], [class*=" icon-md-"] {
+    font-family: '#{$md-icons-font-family}' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+i.icon,i.icon-md,span.icon-md {
+    --pointer: none;
+    pointer-events: var(--pointer);
+    @if (pointer-events == all){
+        cursor: pointer;
+    }
+    &:before {
+        color:var(--color);
+        font-size: var(--font-size);
+        content: var(--glyph);
+    }
+}
+
+.icon-5g {
+    &:before {
+        content: $icon-5g;
+    }
+}
+.icon-air_vents {
+    &:before {
+        content: $icon-air_vents;
+    }
+}
+.icon-aperture {
+    &:before {
+        content: $icon-aperture;
+    }
+}
+.icon-arrow_back {
+    &:before {
+        content: $icon-arrow_back;
+    }
+}
+.icon-arrow_backtop {
+    &:before {
+        content: $icon-arrow_backtop;
+    }
+}
+.icon-arrow_forward {
+    &:before {
+        content: $icon-arrow_forward;
+    }
+}
+.icon-arrowpad {
+    &:before {
+        content: $icon-arrowpad;
+    }
+}
+.icon-audio_in {
+    &:before {
+        content: $icon-audio_in;
+    }
+}
+.icon-audio_out {
+    &:before {
+        content: $icon-audio_out;
+    }
+}
+.icon-back {
+    &:before {
+        content: $icon-back;
+    }
+}
+.icon-battery {
+    &:before {
+        content: $icon-battery;
+    }
+}
+.icon-battery_charge {
+    &:before {
+        content: $icon-battery_charge;
+    }
+}
+.icon-bluetooth {
+    &:before {
+        content: $icon-bluetooth;
+    }
+}
+.icon-call {
+    &:before {
+        content: $icon-call;
+    }
+}
+.icon-camera {
+    &:before {
+        content: $icon-camera;
+    }
+}
+.icon-camera_zoom {
+    &:before {
+        content: $icon-camera_zoom;
+    }
+}
+.icon-camera_zoom_minus {
+    &:before {
+        content: $icon-camera_zoom_minus;
+    }
+}
+.icon-camera_zoom_plus {
+    &:before {
+        content: $icon-camera_zoom_plus;
+    }
+}
+.icon-cancel {
+    &:before {
+        content: $icon-cancel;
+    }
+}
+.icon-capslock {
+    &:before {
+        content: $icon-capslock;
+    }
+}
+.icon-chevron_double {
+    &:before {
+        content: $icon-chevron_double;
+    }
+}
+.icon-component_input {
+    &:before {
+        content: $icon-component_input;
+    }
+}
+.icon-connector {
+    &:before {
+        content: $icon-connector;
+    }
+}
+.icon-continuous_shooting {
+    &:before {
+        content: $icon-continuous_shooting;
+    }
+}
+.icon-control_ring {
+    &:before {
+        content: $icon-control_ring;
+    }
+}
+.icon-dc {
+    &:before {
+        content: $icon-dc;
+    }
+}
+.icon-delete {
+    &:before {
+        content: $icon-delete;
+    }
+}
+.icon-display {
+    &:before {
+        content: $icon-display;
+    }
+}
+.icon-displayport {
+    &:before {
+        content: $icon-displayport;
+    }
+}
+.icon-down_button {
+    &:before {
+        content: $icon-down_button;
+    }
+}
+.icon-dvi {
+    &:before {
+        content: $icon-dvi;
+    }
+}
+.icon-eject {
+    &:before {
+        content: $icon-eject;
+    }
+}
+.icon-endcall {
+    &:before {
+        content: $icon-endcall;
+    }
+}
+.icon-endcall_power {
+    &:before {
+        content: $icon-endcall_power;
+    }
+}
+.icon-esata {
+    &:before {
+        content: $icon-esata;
+    }
+}
+.icon-exposure {
+    &:before {
+        content: $icon-exposure;
+    }
+}
+.icon-fingerprint {
+    &:before {
+        content: $icon-fingerprint;
+    }
+}
+.icon-firewire {
+    &:before {
+        content: $icon-firewire;
+    }
+}
+.icon-flash {
+    &:before {
+        content: $icon-flash;
+    }
+}
+.icon-flashlight {
+    &:before {
+        content: $icon-flashlight;
+    }
+}
+.icon-fm_radio {
+    &:before {
+        content: $icon-fm_radio;
+    }
+}
+.icon-fn {
+    &:before {
+        content: $icon-fn;
+    }
+}
+.icon-focal_plane_mark {
+    &:before {
+        content: $icon-focal_plane_mark;
+    }
+}
+.icon-focus {
+    &:before {
+        content: $icon-focus;
+    }
+}
+.icon-glasses {
+    &:before {
+        content: $icon-glasses;
+    }
+}
+.icon-hdd {
+    &:before {
+        content: $icon-hdd;
+    }
+}
+.icon-hdmi {
+    &:before {
+        content: $icon-hdmi;
+    }
+}
+.icon-headphones {
+    &:before {
+        content: $icon-headphones;
+    }
+}
+.icon-headset {
+    &:before {
+        content: $icon-headset;
+    }
+}
+.icon-home {
+    &:before {
+        content: $icon-home;
+    }
+}
+.icon-hot_shoe {
+    &:before {
+        content: $icon-hot_shoe;
+    }
+}
+.icon-image_stabilizer {
+    &:before {
+        content: $icon-image_stabilizer;
+    }
+}
+.icon-indicator {
+    &:before {
+        content: $icon-indicator;
+    }
+}
+.icon-info {
+    &:before {
+        content: $icon-info;
+    }
+}
+.icon-infrared {
+    &:before {
+        content: $icon-infrared;
+    }
+}
+.icon-iso {
+    &:before {
+        content: $icon-iso;
+    }
+}
+.icon-joystick {
+    &:before {
+        content: $icon-joystick;
+    }
+}
+.icon-kensington {
+    &:before {
+        content: $icon-kensington;
+    }
+}
+.icon-keyboard {
+    &:before {
+        content: $icon-keyboard;
+    }
+}
+.icon-lan {
+    &:before {
+        content: $icon-lan;
+    }
+}
+.icon-lens {
+    &:before {
+        content: $icon-lens;
+    }
+}
+.icon-light_mode {
+    &:before {
+        content: $icon-light_mode;
+    }
+}
+.icon-location {
+    &:before {
+        content: $icon-location;
+    }
+}
+.icon-lock {
+    &:before {
+        content: $icon-lock;
+    }
+}
+.icon-macro {
+    &:before {
+        content: $icon-macro;
+    }
+}
+.icon-memory_card {
+    &:before {
+        content: $icon-memory_card;
+    }
+}
+.icon-menu {
+    &:before {
+        content: $icon-menu;
+    }
+}
+.icon-message {
+    &:before {
+        content: $icon-message;
+    }
+}
+.icon-mic {
+    &:before {
+        content: $icon-mic;
+    }
+}
+.icon-mini_displayport {
+    &:before {
+        content: $icon-mini_displayport;
+    }
+}
+.icon-mode_dial {
+    &:before {
+        content: $icon-mode_dial;
+    }
+}
+.icon-mounting {
+    &:before {
+        content: $icon-mounting;
+    }
+}
+.icon-movie_button {
+    &:before {
+        content: $icon-movie_button;
+    }
+}
+.icon-music {
+    &:before {
+        content: $icon-music;
+    }
+}
+.icon-next_button {
+    &:before {
+        content: $icon-next_button;
+    }
+}
+.icon-numeric_keyboard {
+    &:before {
+        content: $icon-numeric_keyboard;
+    }
+}
+.icon-numlock {
+    &:before {
+        content: $icon-numlock;
+    }
+}
+.icon-object_lens {
+    &:before {
+        content: $icon-object_lens;
+    }
+}
+.icon-ok {
+    &:before {
+        content: $icon-ok;
+    }
+}
+.icon-optical_drive {
+    &:before {
+        content: $icon-optical_drive;
+    }
+}
+.icon-play {
+    &:before {
+        content: $icon-play;
+    }
+}
+.icon-play_arrow {
+    &:before {
+        content: $icon-play_arrow;
+    }
+}
+.icon-power {
+    &:before {
+        content: $icon-power;
+    }
+}
+.icon-prev_button {
+    &:before {
+        content: $icon-prev_button;
+    }
+}
+.icon-recent_apps {
+    &:before {
+        content: $icon-recent_apps;
+    }
+}
+.icon-refresh {
+    &:before {
+        content: $icon-refresh;
+    }
+}
+.icon-sata {
+    &:before {
+        content: $icon-sata;
+    }
+}
+.icon-sattelite {
+    &:before {
+        content: $icon-sattelite;
+    }
+}
+.icon-search {
+    &:before {
+        content: $icon-search;
+    }
+}
+.icon-self_timer {
+    &:before {
+        content: $icon-self_timer;
+    }
+}
+.icon-sensor {
+    &:before {
+        content: $icon-sensor;
+    }
+}
+.icon-sim {
+    &:before {
+        content: $icon-sim;
+    }
+}
+.icon-skip {
+    &:before {
+        content: $icon-skip;
+    }
+}
+.icon-sound_recording {
+    &:before {
+        content: $icon-sound_recording;
+    }
+}
+.icon-source_selection {
+    &:before {
+        content: $icon-source_selection;
+    }
+}
+.icon-speaker {
+    &:before {
+        content: $icon-speaker;
+    }
+}
+.icon-strap {
+    &:before {
+        content: $icon-strap;
+    }
+}
+.icon-stylus {
+    &:before {
+        content: $icon-stylus;
+    }
+}
+.icon-subwoofer {
+    &:before {
+        content: $icon-subwoofer;
+    }
+}
+.icon-switch {
+    &:before {
+        content: $icon-switch;
+    }
+}
+.icon-touch_screen {
+    &:before {
+        content: $icon-touch_screen;
+    }
+}
+.icon-touch_screen_small {
+    &:before {
+        content: $icon-touch_screen_small;
+    }
+}
+.icon-touchpad {
+    &:before {
+        content: $icon-touchpad;
+    }
+}
+.icon-tripod {
+    &:before {
+        content: $icon-tripod;
+    }
+}
+.icon-up_button {
+    &:before {
+        content: $icon-up_button;
+    }
+}
+.icon-usb {
+    &:before {
+        content: $icon-usb;
+    }
+}
+.icon-vga {
+    &:before {
+        content: $icon-vga;
+    }
+}
+.icon-view {
+    &:before {
+        content: $icon-view;
+    }
+}
+.icon-viewfinder {
+    &:before {
+        content: $icon-viewfinder;
+    }
+}
+.icon-volume_control {
+    &:before {
+        content: $icon-volume_control;
+    }
+}
+.icon-volume_down {
+    &:before {
+        content: $icon-volume_down;
+    }
+}
+.icon-volume_up {
+    &:before {
+        content: $icon-volume_up;
+    }
+}
+.icon-wifi {
+    &:before {
+        content: $icon-wifi;
+    }
+}
+.icon-wireless {
+    &:before {
+        content: $icon-wireless;
+    }
+}
+.icon-zoom_minus {
+    &:before {
+        content: $icon-zoom_minus;
+    }
+}
+.icon-zoom_plus {
+    &:before {
+        content: $icon-zoom_plus;
+    }
+}
+
+.icon-arrow_revers {
+    &:before {
+        content: $icon-arrow_revers;
+    }
+}

@@ -5,20 +5,35 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'main',
+      name: 'main-page',
       meta:{
         layout:{
-          default:'empty-layout'
+          default:'main-layout'
         }
       },
-      component: () => import('@/pages/common/MainPage.vue')
+      component: () => import('@/pages/MainPage.vue')
+    },
+    {
+      path: '/notfound',
+      name: 'notfound',
+      component: () => import('@/pages/NotFoundPage.vue')
+    },
+    {
+      path: '/museum-exhibition',
+      name: 'museum-exhibition',
+      meta:{
+        layout:{
+          default:'main-layout'
+        }
+      },
+      component: () => import('@/pages/common/MuseumExhibition.vue')
     },
     {
       path: '/school-history',
       name: 'school-history',
       meta:{
         layout:{
-          default:'empty-layout'
+          default:'main-layout'
         }
       },
       component: () => import('@/pages/common/SchoolHistory.vue')
@@ -28,12 +43,20 @@ const router = createRouter({
       name: 'school-history-uniforms',
       meta:{
         layout:{
-          default:'empty-layout'
+          default:'main-layout'
         }
       },
       component: () => import('@/pages/common/HistorySchoolUniformsPage.vue')
     }
   ]
+})
+
+router.beforeEach(async (to, from, next) => {
+  if(!to.name) {
+    next({ name: 'notfound' })
+    return
+  }
+  next()
 })
 
 export default router

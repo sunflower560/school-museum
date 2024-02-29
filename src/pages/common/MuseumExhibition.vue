@@ -1,9 +1,9 @@
 <template>
-  <div class="main-page">
-    <div class="main-page-main">
+  <div class="museum-exhibition-page">
+    <div class="museum-exhibition-page-main">
       <h1>{{$t('museum.InfoMuseum')}}</h1>
       <h2>
-        {{$t('museum.MuseumExposition')}} <p>"{{$t('museum.SchoolHistory')}}"</p>
+        {{$t('menu.admin.routes.exhibition')}} <p>"{{$t('museum.SchoolHistory')}}"</p>
       </h2>
       <p>
         {{$t('museum.SchoolAddressOne')}} <br> {{$t('museum.SchoolAddressTwo')}}
@@ -11,7 +11,7 @@
       <a href="https://school8mogilev.by/muzeikomnata" target="_blank">{{$t('museum.VirtualExposition')}}</a>
     </div>
 
-    <div class="main-page-content">
+    <div class="museum-exhibition-page-content">
       <h2>{{$t('museum.Valid')}}</h2>
       <ol>
         <li><span>{{$t('museum.SearchScientific')}}:</span> {{$t('museum.SearchScientificDescriptions')}}</li>
@@ -22,7 +22,7 @@
         </li>
       </ol>
 
-      <div class="main-page-exhibit">
+      <div class="museum-exhibition-page-exhibit">
         <h2>{{$t('museum.MuseumExhibits')}}</h2>
         <el-tabs v-model="activeName" class="demo-tabs">
           <el-tab-pane :label="$t('museum.SchoolAccessories')">
@@ -43,7 +43,7 @@
         </el-tabs>
       </div>
 
-      <div class="main-page-sections">
+      <div class="museum-exhibition-page-sections">
         <h2>{{$t('museum.SectionsExhibition')}}:</h2>
         <ul>
           <li>{{$t('museum.HistorySchool')}}</li>
@@ -61,9 +61,10 @@
 <script setup lang="ts">
 import {computed, reactive, Ref, ref, watchEffect} from 'vue'
 import {Document, Location, Setting, Menu as IconMenu,} from "@element-plus/icons-vue";
+import {useMounted} from "@vueuse/core/index";
 
 const activeName = ref('first')
-
+const isMounted = useMounted()
 const state = reactive({ count: 0 })
 
 const count = ref(0)
@@ -143,7 +144,7 @@ console.log(proxy === raw) // false
 <style lang="scss">
 @import '/src/styles/variables.scss';
 
-.main-page {
+.museum-exhibition-page {
   text-align: center;
   padding: $size_big;
 

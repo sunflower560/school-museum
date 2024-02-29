@@ -1,0 +1,26 @@
+.move-left-enter-active {
+    animation-name: moveInLift;
+    animation-duration: .3s;
+}
+
+.move-left-leave-active {
+    animation-name: moveOutLift;
+    animation-duration: .3s;
+}
+
+@keyframes moveInLift {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: none;
+    }
+}
+@keyframes moveOutLift {
+    from {
+        transform: none;
+    }
+    to {
+        transform: translateX(100%);
+    }
+}

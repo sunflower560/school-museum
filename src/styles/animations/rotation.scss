@@ -1,0 +1,27 @@
+.rotate-enter-active {
+  animation-name: rotateIn;
+  animation-duration: 0.5s;
+}
+
+.rotate-leave-active {
+  animation-name: rotateOut;
+  animation-duration: 0.4s;
+}
+
+
+@keyframes rotateIn {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotateOut {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}

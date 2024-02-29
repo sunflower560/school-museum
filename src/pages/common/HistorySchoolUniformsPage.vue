@@ -60,7 +60,8 @@ import {
   School
 } from "@element-plus/icons-vue";
 import {computed, reactive, ref} from "vue";
-
+import {useMounted} from "@vueuse/core/index";
+const isMounted = useMounted()
 </script>
 
 <style lang="scss">

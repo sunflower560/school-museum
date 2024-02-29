@@ -1,10 +1,6 @@
 {
   "common": {
-    "Main": "Main",
-    "SchoolMuseum8": "School №8 museum",
-    "Pages": "Pages",
-    "SchoolHistory": "School history",
-    "historyUniforms": "History of school uniforms"
+    "SchoolMuseum8": "School №8 museum"
   },
   "museum": {
     "MuseumExhibition": "Museum exhibition",
@@ -59,5 +55,21 @@
     "SchoolBlown": "On August 20, the old school building was blown up because it was in disrepair and could not be repaired.",
     "SchoolBlownTwo": "From May 20 to June 13, 2023, the director was Alexander Ivanovich Korzun",
     "DirectorIrinaLeonidovnaRybakova": "On June 14, Irina Leonidovna Rybakova was appointed director of the secondary school."
+  },
+  "menu": {
+    "home": "Main",
+    "admin": {
+      "caption":"Museum",
+      "routes":{
+        "exhibition": "Museum exhibition"
+      }
+    },
+    "resources": {
+      "caption":"Pages",
+      "routes":{
+        "schoolHistory": "School history",
+        "historyUniforms": "History of school uniforms"
+      }
+    }
   }
 }

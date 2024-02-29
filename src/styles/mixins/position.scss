@@ -1,0 +1,20 @@
+@mixin position($top:0,$right:0,$bottom:0,$left:0){
+  position: absolute;
+  top:$top;
+  right: $right;
+  bottom: $bottom;
+  left:$left
+}
+@mixin top-left{
+  @include position(0,auto,auto,0)
+}
+@mixin top-right{
+  @include position(0,0,auto,auto)
+}
+@mixin bottom-left{
+  @include position(auto,auto,0,0)
+}
+@mixin bottom-right{
+  @include position(auto,0,0,auto)
+}
+

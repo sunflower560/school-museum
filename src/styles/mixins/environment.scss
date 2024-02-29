@@ -1,0 +1,48 @@
+@mixin backgroundGradient(
+    $top:0,
+    $left:0,
+    $width:100vw,
+    $height:100vh,
+    $opacity:.3,
+    $bottom:auto,
+    $blend_mode:normal,
+    $radialX:0,
+    $radialY:0,
+    $radial_in_color:#5CF9B7,$radial_out_color:transparent,
+){
+    &:before{
+        width: $width;
+        height: $height;
+        position: absolute;
+        background-image: radial-gradient(circle, $radial_in_color 0%, $radial_out_color 50%);
+        background:{
+            size: 100% 100%;
+            repeat: no-repeat;
+            position:$radialX $radialY;
+        }
+        mix-blend-mode: $blend_mode;
+        content: "";
+        top:$top;
+        left:$left;
+        bottom: $bottom;
+        pointer-events: none;
+        opacity: $opacity;
+        //filter: blur(20%);
+    }
+
+}
+@mixin background-fill($fill-color){
+    position: relative;
+    &:before{
+        width:  100vw;
+        height: 100%;
+        position: absolute;
+        background-color: $fill-color;
+        content: "";
+        left: calc( (100vw - 100%) / -2);
+        top:0;
+    }
+    & > *{
+        position: relative;
+    }
+}

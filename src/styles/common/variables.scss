@@ -1,0 +1,103 @@
+@use "sass:map";
+@use "config" as *;
+$variables-default: (
+    "color-primary":#BE9B6E,
+);
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+    $colors: (
+        "primary": (
+            "base": #BE9B6E,
+        ),
+    ),
+    $font-size: (
+     'extra-large': 30px,
+     'large': 18px,
+     'medium': 16px,
+     'base': 14px,
+     'small': 13px,
+     'extra-small': 12px,
+  ),
+$card:(
+'padding':10px
+),
+  $button:(
+  'font-weight':700
+  )
+);
+$font-weight-light:100;
+$font-weight-normal:400;
+$font-weight-medium:600;
+$font-weight-bold:700;
+
+/* r3 style */
+$r3-font-size-large: 36px;
+$r3-font-size-medium: 22px;
+
+/* Break-point
+--------------------------*/
+$sm: 768px !default;
+$md: 920px !default;
+$lg: 1200px !default;
+$xl: 1920px !default;
+
+$breakpoints: (
+    "xs": (
+        max-width: $sm - 1,
+    ),
+    "sm": (
+        min-width: $sm,
+    ),
+    "md": (
+        min-width: $md,
+    ),
+    "lg": (
+        min-width: $lg,
+    ),
+    "xl": (
+        min-width: $xl,
+    ),
+);
+$breakpoints-spec: (
+    "xs-only": "(max-width: #{$sm - 1})",
+    "sm-and-up": "(min-width: #{$sm})",
+    "sm-only": "(min-width: #{$sm}) and (max-width: #{$md - 1})",
+    "sm-and-down": "(max-width: #{$md - 1})",
+    "md-and-up": "(min-width: #{$md})",
+    "md-only": "(min-width: #{$md}) and (max-width: #{$lg - 1})",
+    "md-and-down": "(max-width: #{$lg - 1})",
+    "lg-and-up": "(min-width: #{$lg})",
+    "lg-only": "(min-width: #{$lg}) and (max-width: #{$xl - 1})",
+    "lg-and-down": "(max-width: #{$xl - 1})",
+    "xl-only": "(min-width: #{$xl})",
+    "landscape": "all and (orientation : landscape)",
+    "portrait": "all and (orientation : portrait)",
+);
+
+$xs-only: map.get($breakpoints-spec, xs-only);
+$sm-and-up: map.get($breakpoints-spec, sm-and-up);
+$sm-only: map.get($breakpoints-spec, sm-only);
+$sm-and-down: map.get($breakpoints-spec, sm-and-down);
+$md-and-up: map.get($breakpoints-spec, md-and-up);
+$md-only: map.get($breakpoints-spec, md-only);
+$md-and-down: map.get($breakpoints-spec, md-and-down);
+$lg-and-up: map.get($breakpoints-spec, lg-and-up);
+$lg-only: map.get($breakpoints-spec, lg-only);
+$lg-and-down: map.get($breakpoints-spec, lg-and-down);
+$xl-only: map.get($breakpoints-spec, xl-only);
+$landscape: map.get($breakpoints-spec, landscape);
+$portrait: map.get($breakpoints-spec, portrait);
+
+$transition-duration: 0.3s;
+$transition-duration-slow: 0.8s;
+$transition-duration-fast: 0.2s;
+$transition-mode: cubic-bezier(0.645, 0.045, 0.355, 1);
+$transition-all: all $transition-duration $transition-mode;
+@mixin transition(
+    $target: all,
+    $duration: $transition-duration,
+    $mode: $transition-mode
+) {
+    transition-duration: $duration;
+    animation-timing-function: $mode;
+    transition-property: $target;
+}

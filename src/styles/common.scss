@@ -1,38 +1,73 @@
-@import 'variables.scss';
-
-#app {
-  font-weight: normal;
-  .view {
-    margin-top: $size_big;
-    margin-left: 10%;
-    margin-right: 10%;
-    @media(max-width: $medium-screen-up) {
-      margin-left: 0;
-      margin-right: 0;
-    }
+@use 'common/config' as *;
+@use 'common/variables' as *;
+@use 'animations/fade' as *;
+@use 'animations/move' as *;
+@use 'variables' as *;
+@use 'icons' as *;
+:root{
+  @each $name, $var in $variables-default {
+    --#{$namespace}-#{$name}:#{$var};
   }
 }
 
-html {
-  font-family: sans-serif;
-  body {
-    color: $color_text;
-    background-color: $color_background;
-    a {
-      color: white;
-      text-decoration: none;
-      font-weight: normal;
-      font-size: $size_small * 2;
-      padding: $shift;
-    }
+h1 {
+  color: $color_orange_main;
+  font-weight: $font_w_medium;
+}
 
-    h1 {
-      color: $color_orange_main;
-      font-weight: $font_w_medium;
+h2 {
+  font-weight: $font_w_medium;
+}
+
+body {
+  @media #{$md-and-down}{
+    overscroll-behavior: contain;
+  }
+}
+.r3-title{
+  font-weight: $font-weight-light;
+}
+h2.r3-title{
+  font-size: 30px;
+}
+h3.r3-title{
+  font-size: 22px;
+}
+
+[class$=-layout]{
+  width: 100%;
+  height:  100%;
+}
+
+.el-space{
+  width: 100%;
+}
+.el-button{
+  &.r3-info-button{
+    border-radius: 0;
+    font-size: 14px;
+    padding: 20px;
+  }
+  &.r3-default-button{
+    border-radius: 0;
+    border: 1px dashed black;
+    font-size: 18px;
+    font-weight: $font-weight-light;
+    padding: 30px;
+    background: #e9e9eb;
+    @media #{$md-and-down} {
+      padding: 20px;
     }
-    h2 {
-      color: $color_orange_h2;
-      font-weight: $font_w_medium;
+  }
+  &.r3-button{
+    height: auto;
+    border-radius: 0;
+    padding: 30px;
+    font-weight: $font-weight-bold;
+    font-size: $r3-font-size-medium;
+    @media #{$md-and-down} {
+      font-size: 16px;
+      padding: 20px;
     }
   }
 }
