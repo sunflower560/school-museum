@@ -121,10 +121,7 @@ const isMounted = useMounted()
     margin-bottom: $radius_big;
 
     .el-collapse {
-      --el-collapse-content-bg-color: #181818;
       --el-collapse-border-color: #414141;
-      --el-collapse-content-text-color: white;
-      --el-collapse-header-bg-color: #181818;
       --el-collapse-header-text-color: #F5853C
     }
   }
@@ -155,7 +152,7 @@ const isMounted = useMounted()
 
   &-year {
     margin-top: $size_big * 2;
-    background-color: $color_main_brown_2;
+    border: $color_main_dark_2 solid 2px;
     padding: $radius_medium;
     border-radius: $radius_medium;
 

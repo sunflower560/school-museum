@@ -24,8 +24,8 @@
 
       <div class="museum-exhibition-page-exhibit">
         <h2>{{$t('museum.MuseumExhibits')}}</h2>
-        <el-tabs v-model="activeName" class="demo-tabs">
-          <el-tab-pane :label="$t('museum.SchoolAccessories')">
+        <el-tabs v-model="activeTabs" class="demo-tabs">
+          <el-tab-pane :label="$t('museum.SchoolAccessories')" name="accessories">
             <p>
               {{$t('museum.SchoolAccessoriesDescription')}}
             </p>
@@ -59,86 +59,10 @@
 </template>
 
 <script setup lang="ts">
-import {computed, reactive, Ref, ref, watchEffect} from 'vue'
-import {Document, Location, Setting, Menu as IconMenu,} from "@element-plus/icons-vue";
-import {useMounted} from "@vueuse/core/index";
+import {computed, reactive, ref, watchEffect} from 'vue'
 
-const activeName = ref('first')
-const isMounted = useMounted()
-const state = reactive({ count: 0 })
+const activeTabs = ref('accessories')
 
-const count = ref(0)
-
-const stateTo = reactive({
-  count
-})
-console.log(state.count) // 0
-stateTo.count = 1
-console.log(count.value) // 1
-const addCount = () => {
-  count.value++
-}
-
-const obj = ref({
-  nested: { count: 0 },
-  arr: [ 'baz', 'bar' ]
-})
-const mutateDeeply = () => {
-  obj.value.nested.count++
-  obj.value.arr.push('nestle')
-}
-
-const raw = {}
-const proxy = reactive(raw)
-console.log(proxy === raw) // false
-
-
-// interface Author {
-//   name: string,
-//   books: Array<string>
-// }
-//
-// const author: Author = reactive({
-//   name: 'John Doe',
-//   books: [
-//     'Vue 2 - Advanced Guide',
-//     'Vue 3 - Basic Guide',
-//     'Vue 4 - The Mystery'
-//   ]
-// })
-//
-// const publishedBooksMessage = computed<string | number>(() => {
-//   return author.books.length > 0 ? 'Yes' : 'No'
-// })
-///////////////////////////
-// const year: Ref<string | number> = ref('2020')
-// console.log(year.value)
-// year.value = 2024
-// console.log(year.value)
-//
-//
-// interface Book {
-//   title: string,
-//   description?: string
-// }
-//
-// const book: Book = reactive({ title: 'Harry Potter' })
-// console.log(book)
-//
-//
-// const count = ref('Harry')
-//
-// const double = computed<string>(() => count.value + 'Potter')
-//
-// const result = double.value.split('')
-// console.log(result)
-/////////////////////////////////////
-// const A0 = ref(0)
-// const A1 = ref(1)
-// const A2 = computed(() => A1.value + A0.value)
-// console.log(A2.value)
-// A0.value = 2
-// console.log(A2.value)
 </script>
 
 <style lang="scss">
@@ -185,7 +109,7 @@ console.log(proxy === raw) // false
 
     ol {
       font-size: $size_small * 2;
-      background-color: $color_main_brown;
+      border: $color_blue_light_3 2px solid;
       padding: 2rem;
       border-radius: 0.5rem;
       text-align: left;
@@ -209,7 +133,7 @@ console.log(proxy === raw) // false
 
     .demo-tabs {
       padding: 2rem;
-      background-color: #575757;
+      border: $color_blue_light_3 2px solid;
       border-radius: 0.5rem;
     }
   }
