@@ -5,6 +5,7 @@
               Main page
             </transition>
         </teleport>
+      <h1>Main page</h1>
     </div>
 </template>
 

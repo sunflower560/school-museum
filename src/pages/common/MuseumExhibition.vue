@@ -1,5 +1,10 @@
 <template>
   <div class="museum-exhibition-page">
+    <teleport to=".main-layout__header-dynamic-section" v-if="isMounted">
+      <transition name="fade-left" mode="out-in" appear>
+       Museum exhibition page
+      </transition>
+    </teleport>
     <div class="museum-exhibition-page-main">
       <h1>{{$t('museum.InfoMuseum')}}</h1>
       <h2>
@@ -60,9 +65,10 @@
 
 <script setup lang="ts">
 import {computed, reactive, ref, watchEffect} from 'vue'
+import {useMounted} from "@vueuse/core/index";
 
 const activeTabs = ref('accessories')
-
+const isMounted = useMounted()
 </script>
 
 <style lang="scss">

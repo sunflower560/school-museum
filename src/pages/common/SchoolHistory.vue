@@ -1,5 +1,10 @@
 <template>
   <div class="school-history-page">
+    <teleport to=".main-layout__header-dynamic-section" v-if="isMounted">
+      <transition name="fade-left" mode="out-in" appear>
+        School history page
+      </transition>
+    </teleport>
     <h1 class="school-history-page-title">{{ $t('menu.resources.routes.schoolHistory') }}</h1>
 
     <p>
