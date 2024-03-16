@@ -112,14 +112,78 @@
           </div>
         </el-header>
         <el-main>
-          <el-scrollbar class="main-layout__main-scrollbar">
+          <el-scrollbar class="main-layout__main-scrollbar" :ref="scrollbar">
             <div class="main-layout__main-content">
-              <router-view name="default" class="main-layout-view" v-slot="{ Component }">
-                <transition name="fade-down" mode="out-in" appear>
-                  <component :is="Component"/>
-                </transition>
-              </router-view>
+              <indent-container>
+                <router-view name="default" class="main-layout-view" v-slot="{ Component }">
+                  <transition name="fade-down" mode="out-in" appear>
+                    <component :is="Component"/>
+                  </transition>
+                </router-view>
+              </indent-container>
             </div>
+            <el-footer style="--el-footer-padding:0;" :ref="footerMain" height="auto">
+              <div class="main-layout__footer">
+                <indent-container>
+                  <el-row :gutter="20">
+                    <el-col :md="24" :lg="{span: 5}">
+                      <div class="main-layout__footer-logo">
+                        <div>
+                          <img src="@/assets/img/logoSchool.png" width="50" height="50">
+                        </div>
+                        <p>
+                          Школа №8 города Могилева
+                        </p>
+                      </div>
+                      <div class="main-layout__footer-social">
+                        <a href="https://t.me/scool8Mogilev" target="_blank">
+                          <img src="@/assets/img/telegram.png">
+                        </a>
+                        <a href="https://vk.com/school8mogilev" target="_blank">
+                          <img src="@/assets/img/vk.png">
+                        </a>
+                        <a href="https://www.instagram.com/school8.mogilev?igsh=MWt2bWNjaWVrbTdpag==" target="_blank">
+                          <img src="@/assets/img/instagram.png">
+                        </a>
+                      </div>
+                    </el-col>
+                    <el-col :md="24" :lg="{span: 4, offset: 1}">
+                      <h3>Наши контакты</h3>
+                      <div>
+                        <img src="@/assets/img/number.png">
+                        <div>
+                          <p>+375 25 711 05 73</p>
+                          <p>+375 25 711 05 74</p>
+                        </div>
+                      </div>
+                      <div>
+                        <img src="@/assets/img/email.png">
+                        <p>info@beautyshop-nn.ru</p>
+                      </div>
+                      <div>
+                        <img src="@/assets/img/VectorCard.png">
+                        <p>Могилев, <br> Минский переулок 4</p>
+                      </div>
+                    </el-col>
+                    <el-col :md="24" :lg="{span: 5, offset: 2}">
+                      <h3>Будьте всегда в курсе</h3>
+                      <p>Подписывайтесь на наши социальные
+                        сети и первыми получайте новости
+                        о всей информации</p>
+                    </el-col>
+                    <el-col :md="24" :lg="{span: 6, offset: 1}">
+                      <h3>Способы оплаты</h3>
+                      <div class="main-layout__footer-payments">
+                        <img src="@/assets/img/ic-visa.png">
+                        <img src="@/assets/img/ic-mastercard.png">
+                        <img src="@/assets/img/ic-verified-visa.png">
+                        <img src="@/assets/img/ic-mastercard-code.png">
+                      </div>
+                    </el-col>
+                  </el-row>
+                </indent-container>
+              </div>
+            </el-footer>
           </el-scrollbar>
           <el-backtop target=".main-layout__main-scrollbar .el-scrollbar__wrap"/>
         </el-main>
@@ -139,7 +203,7 @@ import {
   ref, RendererElement, Teleport, watchEffect,
 } from "vue";
 import {useColorMode, useElementSize, useLocalStorage} from "@vueuse/core";
-import {ElAside} from "element-plus";
+import {ElAside, ElScrollbar} from "element-plus";
 import NavigationMenu from "@/components/navigation/NavigationMenu.vue";
 import IconMd from "@/components/IconMd.vue";
 import {MaterialIcons} from "@/types";
@@ -147,10 +211,12 @@ import {useI18n} from "vue-i18n";
 import {TLocales, TrSchema} from "@/locales";
 import {useMenuRoutes} from "@/router/navigation";
 import {getImageUrl} from "@/composables/utilites";
+import IndentContainer from "@/components/containers/IndentContainer.vue";
 
 export default defineComponent({
   name: "MainLayout",
   components: {
+    IndentContainer,
     IconMd,
     NavigationMenu
   },
@@ -162,10 +228,12 @@ export default defineComponent({
     const adminMenuBlock = useMenuRoutes('admin')
     const resourcesMenuBlock = useMenuRoutes('resources')
     const drawerState = ref(false)
+    const footerMain = ref<HTMLElement | null>(null)
     const headerMain = ref<HTMLElement | null>(null)
     const headerAside = ref<HTMLElement | null>(null)
     const sidebar = ref()
     const isCollapseMenu = ref(false)
+    const scrollbar = ref<InstanceType<typeof ElScrollbar> | null>(null)
     const {height: heightMain} = useElementSize(headerMain)
     const {height: heightAside} = useElementSize(headerMain)
     const style = computed<CSSProperties>(() => {
@@ -204,8 +272,10 @@ export default defineComponent({
       menuContainerWidth,
       style,
       headerMain,
+      footerMain,
       headerAside,
       drawerState,
+      scrollbar,
       mq,
       sidebar,
       menuContainer,
@@ -240,6 +310,7 @@ export default defineComponent({
       }
     }
   }
+
   &__sidebar-drawer{
     .el-drawer__body{
       height: 100%;
@@ -425,6 +496,92 @@ export default defineComponent({
     }
     .el-main{
       height: calc(100% - (var(--layout-header-main-height) + #{$main-padding} * 2));
+    }
+    .el-footer {
+      border-top:var(--el-border-color) 1px solid;
+      .main-layout__footer {
+        .indent-container {
+          &__wrap {
+            margin-top: $lg-padding;
+            padding: $lg-padding 0;
+
+            & > p {
+              a {
+                color: $color-primary;
+              }
+            }
+          }
+        }
+        h3 {
+          font-weight: $font-weight-bold;
+          margin-bottom: $main-padding;
+        }
+        a, p {
+          text-decoration: none;
+          font-size: $font-size-extra-small;
+        }
+
+        &-logo {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          @media #{$md-and-down} {
+            display: none;
+          }
+        }
+        &-social {
+          padding-top: $main-padding;
+          display: flex;
+          justify-content: flex-start;
+          a {
+            margin-right: $main-padding;
+          }
+        }
+        &-payments {
+          display: flex;
+          justify-content: space-between;
+          img{
+            object-fit: contain;
+          }
+        }
+        .el-row {
+          @media #{$md-and-down} {
+            flex-direction: column-reverse;
+          }
+          .el-col {
+            &:nth-child(2) {
+              & > div {
+                margin-bottom: $main-padding;
+                display: flex;
+                align-items: center;
+
+                img {
+                  margin-right: $main-padding-half;
+                }
+
+                & > div {
+                  a {
+                    display: block;
+                  }
+                }
+              }
+            }
+
+            &:nth-child(3) {
+              .rounded-input {
+                margin-top: $main-padding;
+              }
+            }
+          }
+        }
+        .el-col {
+          @media #{$md-and-down} {
+            &:nth-child(3), &:nth-child(4) {
+              display: none;
+            }
+          }
+        }
+      }
     }
   }
   &__aside-container{

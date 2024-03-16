@@ -33,6 +33,26 @@ $color-danger: map.get($colors, 'danger', 'base');
 $color-error: map.get($colors, 'error', 'base');
 $color-info: map.get($colors, 'info', 'base');
 
+$brand-color-tag:#F4E5DE;
+$brand-color-tag-background: #B27B6B;
+$brand-color-tag-background-default: #FFF8F2;
+
+$footer-color-text:#3F3D56;
+$footer-color-input:#F8E4DC;
+$footer-color-bottom-text:#686868;
+
+$block-shift-mini-mal:2px;
+$block-shift-mini:5px;
+$block-shift-mini-max: 11px;
+$block-shift-mini-map: 12px;
+$block-shift-small:30px;
+$block-shift-medium:40px;
+$block-shift-large:60px;
+$block-shift-big:100px;
+$block-shift-large-big:300px;
+
+
+
 $color-primary-light-1:map.get($colors,'primary','light-1');
 $color-primary-light-2:map.get($colors,'primary','light-2');
 $color-primary-light-3:map.get($colors,'primary','light-3');
