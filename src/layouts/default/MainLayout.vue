@@ -92,8 +92,13 @@
           </el-main>
           <el-footer>
             <div class="main-layout__footer">
-              <div class="main-layout__collapse-button" :class="{'is-collapse':isCollapseMenu}"
+              <div v-if="drawerState == false" class="main-layout__collapse-button" :class="{'is-collapse':isCollapseMenu}"
                    @click="collapseMenuTrigger">
+                <icon-md :glyph="MaterialIcons.chevron_left"/>
+              </div>
+
+              <div v-if="drawerState" class="main-layout__collapse-button" :class="{'is-collapse':drawerState}"
+                   @click="collapseMenuTriggerDrawer">
                 <icon-md :glyph="MaterialIcons.chevron_left"/>
               </div>
             </div>
@@ -244,6 +249,7 @@ export default defineComponent({
     })
 
     const menuContainerWidth = computed(() => isCollapseMenu.value ? '60px' : '300px')
+    const menuContainerWidthDrawerState = computed(() => drawerState.value ? '0px' : '300px')
     watchEffect(() => {
       if (!mq.smMinus && drawerState.value)
         drawerState.value = false
@@ -257,6 +263,7 @@ export default defineComponent({
       return h(ElAside)
     })
     const collapseMenuTrigger = () => isCollapseMenu.value = !isCollapseMenu.value
+    const collapseMenuTriggerDrawer = () => drawerState.value = !drawerState.value
     const theme = useColorMode()
     const menuActive = ref(['editor'])
 
@@ -280,6 +287,8 @@ export default defineComponent({
       sidebar,
       menuContainer,
       collapseMenuTrigger,
+      menuContainerWidthDrawerState,
+      collapseMenuTriggerDrawer,
       isCollapseMenu,
       getImageUrl,
       resourcesMenuBlock
@@ -318,6 +327,9 @@ export default defineComponent({
     }
   }
   &__header,&__footer{
+    .el-button {
+      margin-right: $card-padding;
+    }
     min-height: 100%;
     display: flex;
     align-items: center;

@@ -6,57 +6,57 @@
       </transition>
     </teleport>
     <div class="museum-exhibition-page-main">
-      <h1>{{$t('museum.InfoMuseum')}}</h1>
+      <h1>{{$t('museum.infoMuseum')}}</h1>
       <h2>
-        {{$t('menu.admin.routes.exhibition')}} <p>"{{$t('museum.SchoolHistory')}}"</p>
+        {{$t('menu.museum.routes.exhibition')}} <p>"{{$t('museum.schoolHistory')}}"</p>
       </h2>
       <p>
-        {{$t('museum.SchoolAddressOne')}} <br> {{$t('museum.SchoolAddressTwo')}}
+        {{$t('museum.schoolAddressOne')}} <br> {{$t('museum.schoolAddressTwo')}}
       </p>
-      <a href="https://school8mogilev.by/muzeikomnata" target="_blank">{{$t('museum.VirtualExposition')}}</a>
+      <a href="https://school8mogilev.by/muzeikomnata" target="_blank">{{$t('museum.virtualExposition')}}</a>
     </div>
 
     <div class="museum-exhibition-page-content">
-      <h2>{{$t('museum.Valid')}}</h2>
+      <h2>{{$t('museum.valid')}}</h2>
       <ol>
-        <li><span>{{$t('museum.SearchScientific')}}:</span> {{$t('museum.SearchScientificDescriptions')}}</li>
-        <li><span>{{$t('museum.WorkMuseumOffice')}}:</span> {{$t('museum.WorkMuseumOfficeDescriptions')}}
+        <li><span>{{$t('museum.searchScientific')}}:</span> {{$t('museum.searchScientificDescriptions')}}</li>
+        <li><span>{{$t('museum.workMuseumOffice')}}:</span> {{$t('museum.workMuseumOfficeDescriptions')}}
         </li>
-        <li><span>{{$t('museum.CulturalActivities')}}:</span>
-          {{$t('museum.CulturalActivitiesDescriptions')}}
+        <li><span>{{$t('museum.culturalActivities')}}:</span>
+          {{$t('museum.culturalActivitiesDescriptions')}}
         </li>
       </ol>
 
       <div class="museum-exhibition-page-exhibit">
-        <h2>{{$t('museum.MuseumExhibits')}}</h2>
+        <h2>{{$t('museum.museumExhibits')}}</h2>
         <el-tabs v-model="activeTabs" class="demo-tabs">
-          <el-tab-pane :label="$t('museum.SchoolAccessories')" name="accessories">
+          <el-tab-pane :label="$t('museum.schoolAccessories')" name="accessories">
             <p>
-              {{$t('museum.SchoolAccessoriesDescription')}}
+              {{$t('museum.schoolAccessoriesDescription')}}
             </p>
           </el-tab-pane>
-          <el-tab-pane :label="$t('museum.PhotoArchive')">
+          <el-tab-pane :label="$t('museum.photoArchive')">
             <p>
-              {{$t('museum.PhotoArchiveDescription')}}
+              {{$t('museum.photoArchiveDescription')}}
             </p>
           </el-tab-pane>
-          <el-tab-pane :label="$t('museum.Periodicals')">
+          <el-tab-pane :label="$t('museum.periodicals')">
             <p>
-              {{$t('museum.PeriodicalsDescription')}}
+              {{$t('museum.periodicalsDescription')}}
             </p>
           </el-tab-pane>
         </el-tabs>
       </div>
 
       <div class="museum-exhibition-page-sections">
-        <h2>{{$t('museum.SectionsExhibition')}}:</h2>
+        <h2>{{$t('museum.sectionsExhibition')}}:</h2>
         <ul>
-          <li>{{$t('museum.HistorySchool')}}</li>
-          <li>{{$t('museum.FateSchool')}}</li>
-          <li>{{$t('museum.TeacherWork')}}</li>
-          <li>{{$t('museum.Graduates')}}</li>
-          <li>{{$t('museum.Pioneer')}}</li>
-          <li>{{$t('museum.SchoolUniform')}}</li>
+          <li>{{$t('museum.historySchool')}}</li>
+          <li>{{$t('museum.fateSchool')}}</li>
+          <li>{{$t('museum.teacherWork')}}</li>
+          <li>{{$t('museum.graduates')}}</li>
+          <li>{{$t('museum.pioneer')}}</li>
+          <li>{{$t('museum.schoolUniform')}}</li>
         </ul>
       </div>
     </div>

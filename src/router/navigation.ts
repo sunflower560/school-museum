@@ -13,17 +13,17 @@ const useMenuRoutes = (menuType:TMenuBlock): ComputedRef<IMenuBlock> =>{
     const { t} = useI18n<{ message: TrSchema}>({
         useScope: 'global'
     })
-    return  computed(() => {
+    return computed(() => {
         switch (menuType) {
             case "admin":
                 return {
-                    caption: t('menu.admin.caption'),
-                    captionIcon:MaterialIcons.apartment,
+                    caption: t('menu.museum.caption'),
+                    captionIcon:MaterialIcons.location_city,
                     menuRoutes: [
                         {
                             route: {name:'museum-exhibition'},
                             icon: MaterialIcons.museum,
-                            title: t('menu.admin.routes.exhibition'),
+                            title: t('menu.museum.routes.exhibition'),
                         }
                     ]
                 }

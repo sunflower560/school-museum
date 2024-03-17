@@ -8,50 +8,50 @@
     <h1 class="school-history-page-title">{{ $t('menu.resources.routes.schoolHistory') }}</h1>
 
     <p>
-      {{ $t('SchoolMuseum.FirstSocialistSchool') }}
+      {{ $t('schoolMuseum.firstSocialistSchool') }}
     </p>
     <h3>
-      {{ $t('SchoolMuseum.FirstSocialistSchoolMogilev') }}
+      {{ $t('schoolMuseum.firstSocialistSchoolMogilev') }}
     </h3>
 
-    <h2>{{ $t('SchoolMuseum.OneDirector') }}</h2>
+    <h2>{{ $t('schoolMuseum.oneDirector') }}</h2>
     <div class="school-history-page-director">
       <div>
         <el-image src="/src/assets/img/minin.jpg" style="width: 230px; height: 300px"/>
-        <p>{{ $t('SchoolMuseum.OneDirectorName') }}</p>
+        <p>{{ $t('schoolMuseum.oneDirectorName') }}</p>
       </div>
-      <p>{{ $t('SchoolMuseum.OneDirectorDescription') }}</p>
+      <p>{{ $t('schoolMuseum.oneDirectorDescription') }}</p>
     </div>
 
-    <h2>{{ $t('SchoolMuseum.TwoDirector') }}</h2>
+    <h2>{{ $t('schoolMuseum.twoDirector') }}</h2>
     <div class="school-history-page-director">
       <div>
         <el-image src="/src/assets/img/kazimirsky.jpg" style="width: 200px; height: 300px"/>
-        <p>{{ $t('SchoolMuseum.TwoDirectorName') }}</p>
+        <p>{{ $t('schoolMuseum.twoDirectorName') }}</p>
       </div>
-      <p>{{ $t('SchoolMuseum.TwoDirectorDescription') }}</p>
+      <p>{{ $t('schoolMuseum.twoDirectorDescription') }}</p>
     </div>
 
     <div class="school-history-page-year">
       <h1>1941 г.</h1>
       <p>
-        {{ $t('SchoolMuseum.YearDescription') }}
+        {{ $t('schoolMuseum.yearDescription') }}
       </p>
       <h2>С 3 по 26 июля</h2>
       <p>
-        {{ $t('SchoolMuseum.YearDescriptionDefenseMogilev') }}
+        {{ $t('schoolMuseum.yearDescriptionDefenseMogilev') }}
       </p>
     </div>
 
     <div class="school-history-page-year">
-      <h1>{{ $t('SchoolMuseum.Year') }}</h1>
+      <h1>{{ $t('schoolMuseum.year') }}</h1>
       <div class="school-history-page-year-olensky">
         <div>
           <el-image src="/src/assets/img/olensky.jpg" style="width: 210px; height: 300px"/>
-          <p>{{ $t('SchoolMuseum.DirectorOlensky') }}</p>
+          <p>{{ $t('schoolMuseum.directorOlensky') }}</p>
         </div>
         <p>
-          {{ $t('SchoolMuseum.DirectorOlenskyDescription') }}
+          {{ $t('schoolMuseum.directorOlenskyDescription') }}
         </p>
       </div>
     </div>
@@ -60,38 +60,38 @@
       <el-collapse v-model="collapseDate" accordion>
         <el-collapse-item title="1962 г." name="1">
           <div>
-            {{ $t('SchoolMuseum.PTY') }}
+            {{ $t('schoolMuseum.pty') }}
             <br>
-            {{ $t('SchoolMuseum.PTYTwo') }}
+            {{ $t('schoolMuseum.ptyTwo') }}
             <br>
-            {{ $t('SchoolMuseum.PTYThree') }}
+            {{ $t('schoolMuseum.ptyThree') }}
           </div>
         </el-collapse-item>
         <el-collapse-item title="1991 г." name="2">
           <div>
-            {{ $t('SchoolMuseum.DemolishedBuilding') }}
+            {{ $t('schoolMuseum.demolishedBuilding') }}
             <br>
-            {{ $t('SchoolMuseum.DemolishedBuildingTwo') }}
+            {{ $t('schoolMuseum.demolishedBuildingTwo') }}
           </div>
         </el-collapse-item>
         <el-collapse-item title="2002 г." name="3">
           <div>
-            {{ $t('SchoolMuseum.SymbolicKey') }}
+            {{ $t('schoolMuseum.symbolicKey') }}
           </div>
           <el-image src="/src/assets/img/klepchukov.jpg" style="width: 210px; height: 300px"/>
         </el-collapse-item>
         <el-collapse-item title="2014 г." name="4">
           <div>
-            {{ $t('SchoolMuseum.SchoolBlown') }}
+            {{ $t('schoolMuseum.schoolBlown') }}
             <br>
-            {{ $t('SchoolMuseum.SchoolBlownTwo') }}
+            {{ $t('schoolMuseum.schoolBlownTwo') }}
             <br>
           </div>
           <el-image src="/src/assets/img/korzun.jpg" style="width: 210px; height: 300px"/>
         </el-collapse-item>
         <el-collapse-item title="2023 г." name="5">
           <div>
-            {{ $t('SchoolMuseum.DirectorIrinaLeonidovnaRybakova') }}
+            {{ $t('schoolMuseum.directorIrinaLeonidovnaRybakova') }}
           </div>
         </el-collapse-item>
       </el-collapse>
