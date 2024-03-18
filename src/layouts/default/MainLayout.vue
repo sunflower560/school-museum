@@ -92,7 +92,8 @@
           </el-main>
           <el-footer>
             <div class="main-layout__footer">
-              <div v-if="drawerState == false" class="main-layout__collapse-button" :class="{'is-collapse':isCollapseMenu}"
+              <div v-if="drawerState == false" class="main-layout__collapse-button"
+                   :class="{'is-collapse':isCollapseMenu}"
                    @click="collapseMenuTrigger">
                 <icon-md :glyph="MaterialIcons.chevron_left"/>
               </div>
@@ -173,16 +174,24 @@
                     <el-col :md="24" :lg="{span: 5, offset: 2}">
                       <h3>Будьте всегда в курсе</h3>
                       <p>Подписывайтесь на наши социальные
-                        сети и первыми получайте новости
-                        о всей информации</p>
+                        сети и на наш сайт, первыми получайте новости
+                        о всей новой информации</p>
+                        <a href="https://school8mogilev.by/" target="_blank">
+                          <p>Наш сайт<img src="@/assets/img/logoSchool.png" width="40" height="40"></p>
+                        </a>
                     </el-col>
                     <el-col :md="24" :lg="{span: 6, offset: 1}">
-                      <h3>Способы оплаты</h3>
+                      <h3>Наши социальные сети</h3>
                       <div class="main-layout__footer-payments">
-                        <img src="@/assets/img/ic-visa.png">
-                        <img src="@/assets/img/ic-mastercard.png">
-                        <img src="@/assets/img/ic-verified-visa.png">
-                        <img src="@/assets/img/ic-mastercard-code.png">
+                        <a href="https://t.me/scool8Mogilev" target="_blank">
+                          <img src="@/assets/img/telegramIcon.png">
+                        </a>
+                        <a href="https://vk.com/school8mogilev" target="_blank">
+                          <img src="@/assets/img/vkIcon.png">
+                        </a>
+                        <a href="https://www.instagram.com/school8.mogilev?igsh=MWt2bWNjaWVrbTdpag==" target="_blank">
+                          <img src="@/assets/img/instagramIcon.png">
+                        </a>
                       </div>
                     </el-col>
                   </el-row>
@@ -304,14 +313,16 @@ export default defineComponent({
 @use "@/styles/common/icons.scss" as *;
 @use "@/styles/icons.scss" as *;
 
-.main-layout{
-  &__theme-switch{
-    span.is-text{
+.main-layout {
+  &__theme-switch {
+    span.is-text {
       @extend .icon-md;
       font-size: $font-size-medium;
+
       &:before {
         content: $icon-md-dark_mode;
       }
+
       &[ aria-hidden = 'true'] {
         &:before {
           content: $icon-md-light_mode;
@@ -320,75 +331,90 @@ export default defineComponent({
     }
   }
 
-  &__sidebar-drawer{
-    .el-drawer__body{
+  &__sidebar-drawer {
+    .el-drawer__body {
       height: 100%;
       padding: 0;
     }
   }
-  &__header,&__footer{
+
+  &__header, &__footer {
     .el-button {
       margin-right: $card-padding;
     }
+
     min-height: 100%;
     display: flex;
     align-items: center;
   }
+
   &__wrap,
   &__main-container,
-  &__aside-container{
+  &__aside-container {
     height: 100%;
   }
+
   .el-main {
-    padding:0;
+    padding: 0;
   }
-  .el-aside{
+
+  .el-aside {
     @include transition();
 
   }
-  &__header-title{
+
+  &__header-title {
     overflow: hidden;
     display: flex;
     justify-content: space-between;
-    &-container{
+
+    &-container {
       white-space: nowrap;
       display: flex;
       align-items: center;
-      padding-left:$main-padding;
-      color:$layout-side-title-color;
+      padding-left: $main-padding;
+      color: $layout-side-title-color;
       font-weight: bold;
     }
-    &-logo{
-      padding-left:$main-padding;
+
+    &-logo {
+      padding-left: $main-padding;
     }
-    .main-layout__person{
+
+    .main-layout__person {
       margin-left: auto;
       cursor: pointer;
-      .el-avatar{
+
+      .el-avatar {
         @include transition();
         max-width: 36px;
         max-height: 36px;
       }
-      &.is-collapse{
-        .el-avatar{
+
+      &.is-collapse {
+        .el-avatar {
           max-width: 18px;
           max-height: 18px;
         }
       }
     }
   }
-  &__header-dynamic-section{
+
+  &__header-dynamic-section {
     //z-index: 0;
     width: 100%;
+
     .page-title {
       display: flex;
       align-items: center;
       justify-content: space-between;
       margin-top: 0;
+
       & > * {
         display: inherit;
         align-items: inherit;
       }
+
       &__left {
 
         & > * {
@@ -399,44 +425,53 @@ export default defineComponent({
           line-height: 100%;
         }
       }
+
       &__right {
-        .el-form-item:last-child{
+        .el-form-item:last-child {
           margin-left: auto;
           margin-right: 0;
         }
       }
     }
-    .page-title-status{
+
+    .page-title-status {
       display: flex;
       align-items: center;
       margin-top: 0;
       border: 1px solid transparent;
-      &__section{
+
+      &__section {
         margin-right: $main-padding;
         display: flex;
         align-items: center;
+
         & > * {
           margin-right: $main-padding;
         }
-        &-is--right{
-          margin-left:auto ;
+
+        &-is--right {
+          margin-left: auto;
           margin-right: 0;
         }
-        .el-progress{
+
+        .el-progress {
           width: 300px;
         }
       }
     }
-    .el-select-v2{
+
+    .el-select-v2 {
       min-width: 240px;
     }
   }
-  &__aside-content{
-    h3{
+
+  &__aside-content {
+    h3 {
       display: flex;
       align-items: center;
       overflow: hidden;
-      a{
+
+      a {
         flex: 1;
         display: flex;
         align-items: center;
@@ -446,71 +481,88 @@ export default defineComponent({
         white-space: nowrap;
         text-overflow: ellipsis;
         text-decoration: none;
-        &:hover{
+
+        &:hover {
           color: $color-primary-light-7;
         }
-        %route-active{
-          border-color:$color-primary;
+
+        %route-active {
+          border-color: $color-primary;
           color: $color-primary-light-5;
         }
+
         &.router-link-active:not(.is-root-route),
-        &.router-link-exact-active.is-root-route{
-          border-color:$color-primary;
+        &.router-link-exact-active.is-root-route {
+          border-color: $color-primary;
           color: $color-primary-light-5;
         }
       }
-      .icon-md{
+
+      .icon-md {
         padding: $main-padding
       }
-      .el-divider{
+
+      .el-divider {
         margin-right: 0;
         border-color: $aside-item-border-color;
       }
-      .el-tooltip__trigger{
+
+      .el-tooltip__trigger {
         cursor: pointer;
       }
     }
+
     .el-collapse {
-      --el-collapse-content-bg-color:"transparent";
-      --el-collapse-border-color:#{$aside-item-border-color};
-      &-item__header{
+      --el-collapse-content-bg-color: "transparent";
+      --el-collapse-border-color: #{$aside-item-border-color};
+
+      &-item__header {
         background-color: $layout-side-sections-color;
         color: white;
         overflow: hidden;
         text-overflow: ellipsis;
-        .el-icon.el-collapse-item__arrow{
+
+        .el-icon.el-collapse-item__arrow {
           margin-right: $main-padding;
         }
-        .icon-md{
+
+        .icon-md {
           padding: 0 $main-padding;
         }
       }
-      &-item__content{
-        .review-tree{
+
+      &-item__content {
+        .review-tree {
           padding: 0 $main-padding;
         }
       }
     }
   }
-  &__main-content{
+
+  &__main-content {
     padding: $main-padding;
   }
-  &__main-container{
-    .el-header{
-      border-bottom:var(--el-border-color) 1px solid;
+
+  &__main-container {
+    .el-header {
+      border-bottom: var(--el-border-color) 1px solid;
       min-height: 60px;
-      --el-header-height:var(--layout-header-main-height);
+      --el-header-height: var(--layout-header-main-height);
       transition: none;
-      .main-layout__header{
+
+      .main-layout__header {
         display: flex;
         justify-content: space-between;
       }
     }
-    .el-main{
+
+    .el-main {
       height: calc(100% - (var(--layout-header-main-height) + #{$main-padding} * 2));
     }
+
     .el-footer {
-      border-top:var(--el-border-color) 1px solid;
+      border-top: var(--el-border-color) 1px solid;
+
       .main-layout__footer {
         .indent-container {
           &__wrap {
@@ -524,10 +576,12 @@ export default defineComponent({
             }
           }
         }
+
         h3 {
           font-weight: $font-weight-bold;
           margin-bottom: $main-padding;
         }
+
         a, p {
           text-decoration: none;
           font-size: $font-size-extra-small;
@@ -541,25 +595,37 @@ export default defineComponent({
             display: none;
           }
         }
+
         &-social {
           padding-top: $main-padding;
           display: flex;
           justify-content: flex-start;
+
           a {
             margin-right: $main-padding;
           }
         }
+
         &-payments {
           display: flex;
           justify-content: space-between;
-          img{
+
+          img {
+            margin-top: $block-shift-mini;
             object-fit: contain;
+            transition: all linear 0.2s;
+          }
+
+          img:hover {
+            margin-top: 0;
           }
         }
+
         .el-row {
           @media #{$md-and-down} {
             flex-direction: column-reverse;
           }
+
           .el-col {
             &:nth-child(2) {
               & > div {
@@ -580,12 +646,28 @@ export default defineComponent({
             }
 
             &:nth-child(3) {
-              .rounded-input {
-                margin-top: $main-padding;
+              a {
+                p {
+                  color: #957d53;
+                  font-weight: $font-weight-medium;
+                  border: #3d362d solid 1px;
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  border-radius: $font-size-small;
+                  padding: $block-shift-mini;
+                  margin-top:$font-size-base;
+                  font-size: $lg-padding;
+                  transition: all linear 0.2s;
+                }
+                p:hover {
+                  margin-top: $card-padding;
+                }
               }
             }
           }
         }
+
         .el-col {
           @media #{$md-and-down} {
             &:nth-child(3), &:nth-child(4) {
@@ -596,30 +678,37 @@ export default defineComponent({
       }
     }
   }
-  &__aside-container{
+
+  &__aside-container {
     color: white;
-    background-color:$layout-side-background-color;
-    border-right:var(--el-border-color) 1px solid;;
-    .el-header,.el-footer{
+    background-color: $layout-side-background-color;
+    border-right: var(--el-border-color) 1px solid;;
+
+    .el-header, .el-footer {
       background-color: $layout-side-sections-color;
     }
-    .el-header{
-      border-bottom:$aside-item-border-color 1px solid ;
+
+    .el-header {
+      border-bottom: $aside-item-border-color 1px solid;
     }
-    .el-main{
+
+    .el-main {
       height: calc(100% - (var(--layout-header-aside-height) + #{$main-padding} * 2));
     }
   }
-  &__footer{
+
+  &__footer {
     position: relative;
   }
-  &__collapse-button{
+
+  &__collapse-button {
     display: flex;
     position: absolute;
     cursor: pointer;
     right: 0;
-    @include transition(transform,$transition-duration-slow);
-    &.is-collapse{
+    @include transition(transform, $transition-duration-slow);
+
+    &.is-collapse {
       transform: rotate(-180deg);
     }
   }
