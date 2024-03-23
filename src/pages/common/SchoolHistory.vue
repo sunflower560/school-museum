@@ -17,7 +17,7 @@
     <h2>{{ $t('schoolMuseum.oneDirector') }}</h2>
     <div class="school-history-page-director">
       <div>
-        <el-image src="/src/assets/img/minin.jpg" style="width: 230px; height: 300px"/>
+        <el-image src="src/assets/img/minin.jpg" style="width: 230px; height: 300px"/>
         <p>{{ $t('schoolMuseum.oneDirectorName') }}</p>
       </div>
       <p>{{ $t('schoolMuseum.oneDirectorDescription') }}</p>
@@ -26,7 +26,7 @@
     <h2>{{ $t('schoolMuseum.twoDirector') }}</h2>
     <div class="school-history-page-director">
       <div>
-        <el-image src="/src/assets/img/kazimirsky.jpg" style="width: 200px; height: 300px"/>
+        <el-image src="src/assets/img/kazimirsky.jpg" style="width: 200px; height: 300px"/>
         <p>{{ $t('schoolMuseum.twoDirectorName') }}</p>
       </div>
       <p>{{ $t('schoolMuseum.twoDirectorDescription') }}</p>
@@ -37,7 +37,7 @@
       <p>
         {{ $t('schoolMuseum.yearDescription') }}
       </p>
-      <h2>С 3 по 26 июля</h2>
+      <h2>{{ $t('schoolMuseum.fromJulyToJuly') }}</h2>
       <p>
         {{ $t('schoolMuseum.yearDescriptionDefenseMogilev') }}
       </p>
@@ -47,7 +47,7 @@
       <h1>{{ $t('schoolMuseum.year') }}</h1>
       <div class="school-history-page-year-olensky">
         <div>
-          <el-image src="/src/assets/img/olensky.jpg" style="width: 210px; height: 300px"/>
+          <el-image src="src/assets/img/olensky.jpg" style="width: 210px; height: 300px"/>
           <p>{{ $t('schoolMuseum.directorOlensky') }}</p>
         </div>
         <p>
@@ -78,7 +78,7 @@
           <div>
             {{ $t('schoolMuseum.symbolicKey') }}
           </div>
-          <el-image src="/src/assets/img/klepchukov.jpg" style="width: 210px; height: 300px"/>
+          <el-image src="src/assets/img/klepchukov.jpg" style="width: 210px; height: 300px"/>
         </el-collapse-item>
         <el-collapse-item title="2014 г." name="4">
           <div>
@@ -87,7 +87,7 @@
             {{ $t('schoolMuseum.schoolBlownTwo') }}
             <br>
           </div>
-          <el-image src="/src/assets/img/korzun.jpg" style="width: 210px; height: 300px"/>
+          <el-image src="src/assets/img/korzun.jpg" style="width: 210px; height: 300px"/>
         </el-collapse-item>
         <el-collapse-item title="2023 г." name="5">
           <div>
