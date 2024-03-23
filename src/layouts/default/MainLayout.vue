@@ -135,10 +135,12 @@
                     <el-col :md="24" :lg="{span: 5}">
                       <div class="main-layout__footer-logo">
                         <div>
-                          <img src="@/assets/img/logoSchool.png" width="50" height="50">
+                          <a href="https://school8mogilev.by/" target="_blank">
+                            <img src="@/assets/img/logoSchool.png" width="50" height="50">
+                          </a>
                         </div>
                         <p>
-                          Школа №8 города Могилева
+                          {{$t("footer.school")}}
                         </p>
                       </div>
                       <div class="main-layout__footer-social">
@@ -154,34 +156,32 @@
                       </div>
                     </el-col>
                     <el-col :md="24" :lg="{span: 4, offset: 1}">
-                      <h3>Наши контакты</h3>
+                      <h3>{{$t("footer.contacts")}}</h3>
                       <div>
                         <img src="@/assets/img/number.png">
                         <div>
-                          <p>+375 25 711 05 73</p>
-                          <p>+375 25 711 05 74</p>
+                          <p>+375 222 42-22-06</p>
+                          <p>+375 222 42-22-06</p>
                         </div>
                       </div>
                       <div>
                         <img src="@/assets/img/email.png">
-                        <p>info@beautyshop-nn.ru</p>
+                        <p>school8@mogilev.by</p>
                       </div>
                       <div>
                         <img src="@/assets/img/VectorCard.png">
-                        <p>Могилев, <br> Минский переулок 4</p>
+                        <p> {{$t("footer.mogilev")}}, <br> {{$t("footer.address")}}</p>
                       </div>
                     </el-col>
                     <el-col :md="24" :lg="{span: 5, offset: 2}">
-                      <h3>Будьте всегда в курсе</h3>
-                      <p>Подписывайтесь на наши социальные
-                        сети и на наш сайт, первыми получайте новости
-                        о всей новой информации</p>
+                      <h3>{{$t("footer.StayUpToDate")}}</h3>
+                      <p>{{$t("footer.social")}}</p>
                         <a href="https://school8mogilev.by/" target="_blank">
-                          <p>Наш сайт<img src="@/assets/img/logoSchool.png" width="40" height="40"></p>
+                          <p>{{$t("footer.website")}}<img src="@/assets/img/logoSchool.png" width="40" height="40"></p>
                         </a>
                     </el-col>
                     <el-col :md="24" :lg="{span: 6, offset: 1}">
-                      <h3>Наши социальные сети</h3>
+                      <h3>{{$t("footer.ouSocialNetworks")}}</h3>
                       <div class="main-layout__footer-payments">
                         <a href="https://t.me/scool8Mogilev" target="_blank">
                           <img src="@/assets/img/telegramIcon.png">

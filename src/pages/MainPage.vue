@@ -5,21 +5,108 @@
               Main page
             </transition>
         </teleport>
-      <h1>Main page</h1>
+        <div class="main-page__container">
+          <h1>{{$t('main.mainPage')}}</h1>
+
+          <div class="main-page__introduction">
+            <p>
+              {{$t('main.introduction')}}
+            </p>
+            <h2>{{$t('main.informationTitle')}}</h2> <br>
+            <ul>
+              <li>{{$t('main.informationDescription.one')}}</li>
+              <li>{{$t('main.informationDescription.two')}}</li>
+              <li>{{$t('main.informationDescription.three')}}</li>
+              <li>{{$t('main.informationDescription.four')}}</li>
+              <li>{{$t('main.informationDescription.fife')}}</li>
+              <li>{{$t('main.informationDescription.six')}}</li>
+              <li>{{$t('main.informationDescription.seven')}}</li>
+              <li>{{$t('main.informationDescription.eight')}}</li>
+            </ul>
+
+            <p>
+              {{$t('main.historyTell')}} <br>
+              {{$t('main.events')}}
+            </p>
+
+<!--            <el-row :gutter="20">-->
+<!--              <el-col :span="24">-->
+<!--                <swiper  :slidesPerView="mq.smMinus ? 1.9 : 4"-->
+<!--                         :spaceBetween="mq.smMinus ? 5 : 20"-->
+<!--                         :loop="true">-->
+<!--                  <swiper-slide v-for="news in newsList" :key="`news-${news.id}`">-->
+<!--                    <news-card :novelty="news" />-->
+<!--                  </swiper-slide>-->
+<!--                </swiper>-->
+<!--              </el-col>-->
+<!--            </el-row>-->
+
+            <h2>{{$t('main.importantInformation')}}</h2>
+            <p>
+              {{$t('main.material')}} <br>
+              {{$t('main.manyInformation')}} <br> <br>
+              {{$t('main.followThisSite')}}
+            </p>
+          </div>
+        </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import {computed, defineComponent, reactive, ref} from 'vue';
+import {ref, inject} from 'vue';
 import {useMounted} from "@vueuse/core";
+// import {INovelty} from "@/resources/types";
+
+import 'swiper/css';
+// import { Swiper, SwiperSlide } from 'swiper/vue';
+// import NewsCard from "@/components/cards/NewsCard.vue";
 const isMounted = useMounted()
+
+const  mq = inject('mq',{
+  smMinus: false,
+})
+
+// const newsList = ref<Array<INovelty>>([])
+//
+// for(let i = 1; i < 20; i++) {
+//   newsList.value.push({
+//     id:i,
+//     description:`Description for card news id:${i}`,
+//     image:'/src/assets/img/logoSchool.png'
+//   })
+// }
 
 </script>
 
 <style lang="scss">
 @use '@/styles/common/assembly.scss' as *;
 @use '@/styles/common/variables.scss' as *;
+@import '/src/styles/variables.scss';
 .main-page{
+  &__introduction {
+    & > .el-row {
+      margin-bottom: $block-shift-medium;
+      .el-col {
+        @media #{$md-and-down} {
+          margin-bottom: $main-padding;
+        }
+      }
+    }
+    margin-top: $main-padding;
+    p {
+      margin-top: $size_average;
+      margin-bottom: $radius_large;
+    }
 
+    ul {
+     li {
+        margin-bottom: 0.5rem;
+      }
+    }
+    ul li::marker {
+      color: $color_orange_main;
+      font-size: $size_big;
+    }
+  }
 }
 </style>

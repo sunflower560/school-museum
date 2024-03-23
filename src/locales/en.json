@@ -54,7 +54,29 @@
     "symbolicKey": "On September 1, director Valery Mikhailovich Klepchukov received a symbolic key and students crossed the threshold of the new school",
     "schoolBlown": "On August 20, the old school building was blown up because it was in disrepair and could not be repaired.",
     "schoolBlownTwo": "From May 20 to June 13, 2023, the director was Alexander Ivanovich Korzun",
-    "directorIrinaLeonidovnaRybakova": "On June 14, Irina Leonidovna Rybakova was appointed director of the secondary school."
+    "directorIrinaLeonidovnaRybakova": "On June 14, Irina Leonidovna Rybakova was appointed director of the secondary school.",
+    "fromJulyToJuly": "From July 3 to July 26"
+  },
+  "main": {
+    "mainPage": "Main Page",
+    "introduction": "Greetings to everyone on this site. It provides information about school No. 8 of the city of Mogilev and the museum of this school",
+    "informationTitle": "Here you will learn:",
+    "informationDescription": {
+      "one": "About the history of school 8",
+      "two": "About her awards and achievements",
+      "three": "About what happened during the war",
+      "four": "How much has school changed since the USSR",
+      "fife": "How students studied before and now",
+      "six": "What was the school uniform like then and now",
+      "seven": "About the school museum and what history is stored in it",
+      "eight": "And much more"
+    },
+    "historyTell": "Since this site tells about the history of school 8",
+    "events": "About most of the key events that have happened over the years",
+    "importantInformation": "Important information",
+    "material": "The material currently available on the site is not all",
+    "manyInformation": "There will be many updates and a lot of interesting and important information about school 8",
+    "followThisSite": "So keep an eye on this site and wait for new updates)"
   },
   "menu": {
     "home": "Main",
@@ -71,5 +93,15 @@
         "historyUniforms": "History of school uniforms"
       }
     }
+  },
+  "footer": {
+    "school": "School №8 the city of Mogilev",
+    "contacts": "Our contacts",
+    "mogilev": "Mogilev",
+    "address": "Minsky Lane 4",
+    "StayUpToDate": "Stay up to date",
+    "social": "Subscribe to our social networks and our website, be the first to receive news about all new information",
+    "website": "Our website",
+    "ouSocialNetworks": "Our social networks"
   }
 }
