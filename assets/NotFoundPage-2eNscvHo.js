@@ -1,0 +1,1 @@
+import{d as o,_ as e,o as n,c as t,j as s}from"./index-WKOLKucy.js";const a=o({name:"NotFoundPage"}),c={class:"page-no-found"},d=s("h1",null,"Page not found :(",-1),_=[d];function r(p,f,i,u,l,m){return n(),t("div",c,_)}const g=e(a,[["render",r]]);export{g as default};
