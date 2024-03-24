@@ -5,70 +5,53 @@
         History of school uniforms page
       </transition>
     </teleport>
-    <h1>История школьной формы</h1>
+    <h1>{{$t('historyUniforms.historySchoolUniforms')}}</h1>
 
     <div class="history-school__uniforms-page-content">
       <div>
-        <p><span>Школьная форма</span> — обязательная повседневная форма одежды для учеников
-          во время их нахождения в школе и на официальных школьных мероприятиях вне школы</p>
+        <p><span>{{$t('historyUniforms.schoolForms')}}</span> — {{$t('historyUniforms.eventsForms')}}</p>
       </div>
 
       <div class="history-school__uniforms-page-content__ussr">
-        <h2>Школьная форма в СССР</h2>
+        <h2>{{$t('historyUniforms.formsUssr')}}</h2>
 
-        <h4>1920—1950 годы: От эксперимента к классике </h4>
+        <h4>{{$t('historyUniforms.1950')}}</h4>
         <el-row :gutter="20">
           <el-col :lg="7" :md="10">
             <el-image src="src/assets/img/SchoolUssrForm.jpg"/>
           </el-col>
           <el-col :lg="17" :md="14">
-            <p>В 1918 году гимназическая форма дореволюционной
-              России была признана буржуазным пережитком и отменена
-              вместе с многими другими разумными наработками в области образования</p>
+            <p>{{$t('historyUniforms.1918')}}</p>
           </el-col>
         </el-row>
 
-        <p>С точки зрения «классовой борьбы» старая форма считалась символом
-          принадлежности к высшим сословиям (была даже презрительная кличка
-          для сентиментальной девочки — «гимназистка»)</p>
+        <p>{{$t('historyUniforms.classStruggle')}}</p>
 
-        <p>С другой стороны — форма символизировала абсолютную несвободу ученика,
-          его униженное и подневольное положение</p>
+        <p>{{$t('historyUniforms.studentLackFreedom')}}</p>
 
         <div class="history-school__uniforms-page-content__ussr-poverty">
           <p>
-            Но у этого отказа от формы была и другая, более понятная,
-            подоплёка — <span>бедность</span>
+            {{$t('historyUniforms.background')}} — <span>{{$t('historyUniforms.poverty')}}</span>
           </p>
           <p>
-            Ученики ходили в школу в том, что могли
-            предоставить им родители, а государство в тот момент активно боролось
-            с разрухой, классовыми врагами и пережитками прошлого.
+            {{$t('historyUniforms.provideParents')}}
           </p>
         </div>
 
-        <h2>Былой образ</h2>
+        <h2>{{$t('historyUniforms.formerImage')}}</h2>
 
         <div class="history-school__uniforms-page-content__ussr__former-image">
           <p>
-            Однако со временем, когда эпоха экспериментов уступила место иным реалиям,
-            было решено возвратиться к <span>былому образу</span> — к коричневым строгим платьям,
-            фартукам, ученическим курточкам и отложным воротничкам
+            {{$t('historyUniforms.experiments')}} <span>{{$t('historyUniforms.formersImage')}}</span> — {{$t('historyUniforms.strict')}}
           </p>
 
           <p>
-            Теперь уже <span>«свободная форма одежды»</span> стала ассоциироваться с
-            буржуазной разнузданностью, а всех дерзких экспериментаторов 1920-х
-            было решено объявить «вредителями» и <a target="_blank"
-                                                    href="https://pandia.ru/text/category/vragi_naroda/">«врагами
-            народа»</a>
+            {{$t('historyUniforms.nowAlready')}} <span>{{$t('historyUniforms.looseUniform')}}</span> {{$t('historyUniforms.bourgeoisLicentiousness')}}
+            <a target="_blank" href="https://pandia.ru/text/category/vragi_naroda/">{{$t('historyUniforms.enemiesPeople')}}</a>
           </p>
 
           <p>
-            В СССР школьная форма несколько раз менялась.
-            Существовало несколько моделей. У девочек — классическое
-            коричневое платье с чёрным (повседневным) или белым
-            (для торжественных мероприятий) фартуком, завязывавшимся сзади на бант
+            {{$t('historyUniforms.ussrForms')}}
           </p>
 
           <el-row :gutter="20">
@@ -90,29 +73,25 @@
           </el-row>
 
           <p>
-            <span>Платья</span> были скромно украшены кружевными воротничками и манжетами
+            <span>{{$t('historyUniforms.dresses')}}</span> {{$t('historyUniforms.cuffs')}}
           </p>
           <p>
-            Ношение воротника и манжетов было обязательным. В дополнение к этому
-            девочки могли носить чёрные или коричневые (повседневные) или белые (парадные)
-            <span>банты</span>
+            {{$t('historyUniforms.compulsory')}}
+            <span>{{$t('historyUniforms.bows')}}</span>
           </p>
           <p>
-            <span>Банты</span> других цветов по правилам не допускались. В целом, форма для девочек
-            мало чем отличалась от дореволюционного образца
+            <span>{{$t('historyUniforms.bowsBig')}}</span> {{$t('historyUniforms.wereNotAllowed')}}
           </p>
         </div>
 
 
-        <h2>Эпоха Сталина</h2>
+        <h2>{{$t('historyUniforms.stalinEra')}}</h2>
         <div class="history-school__uniforms-page-content__ussr__era">
           <p>
-            Строгость нравов эпохи Сталина распространялась,
-            разумеется, и на школьную жизнь
+            {{$t('historyUniforms.spread')}}
           </p>
           <p>
-            Самые незначительные эсксперименты с длиной или иными параметрами школьной
-            формы сурово карались администрацией учебного заведения
+            {{$t('historyUniforms.administration')}}
           </p>
 
           <div class="history-school__uniforms-page-content__ussr__era__puritan-morality">
@@ -121,49 +100,39 @@
                 <el-image src="src/assets/img/puritanMorality.png"/>
               </el-col>
               <el-col :lg="17" :md="14">
-                <p>Даже причёска должна была отвечать требованиям пуританской морали —
-                  «модельные стрижки» до конца 50-х годов были под строгим запретом,
-                  не говоря уже об окраске волос. Девочки обязательно носили косы с бантами</p>
+                <p>{{$t('historyUniforms.hairstyle')}}</p>
               </el-col>
             </el-row>
           </div>
 
           <p>
-            <span>Школьную форму</span> эпохи можно увидеть в
-            фильмах «Первоклассница», «Алёша Птицын вырабатывает
-            характер» и «Васёк Трубачёв и его товарищи»
+            <span>{{$t('historyUniforms.schoolUniform')}}</span> {{$t('historyUniforms.movies')}}
           </p>
 
 
         </div>
 
-        <h2>Оттепель</h2>
+        <h2>{{$t('historyUniforms.thaw')}}</h2>
         <div class="history-school__uniforms-page-content__ussr__thaw">
           <p>
-            <span>«Потепление»</span> режима не сразу сказалось на демократизации школьной формы, однако, это всё-таки
-            произошло
+            <span>{{$t('historyUniforms.warming')}}</span> {{$t('historyUniforms.affected')}}
           </p>
 
           <p>
-            Покрой формы стал более тождествен тем направлениям моды,
-            которые имели место в <span>1960-х</span>. Правда, повезло только мальчикам.
-            У мальчиков с середины <span>1970-х</span> серые шерстяные брюки и курточки были
-            заменены на брюки и куртки из полушерстяной ткани синего цвета.
-            Покрой курток напоминал классические джинсовые куртки (в мире набирала обороты так называемая «джинсовая
-            мода»)
+            {{$t('historyUniforms.shapeCut')}} <span>{{$t('historyUniforms.1960')}}</span>. {{$t('historyUniforms.luckyMans')}} <span>{{$t('historyUniforms.1970')}}</span> {{$t('historyUniforms.grayTrousers')}}
           </p>
 
           <p>
-            На боковой части рукава была нашита <span>эмблема</span>
-            из мягкого пластика с нарисованным открытым учебником и восходящим солнцем
+            {{$t('historyUniforms.sleeves')}} <span>{{$t('historyUniforms.emblem')}}</span>
+            {{$t('historyUniforms.plastic')}}
           </p>
           <br>
           <p>
-            Школьников конца <span>1960-х</span> мы можем видеть в культовом фильме «Доживём до понедельника»
+            {{$t('historyUniforms.schoolchildrenEnd')}} <span> {{$t('historyUniforms.1960')}}</span> {{$t('historyUniforms.cultFilm')}}
           </p>
         </div>
 
-        <h2><span>1980-е:</span> Перестройка в действии</h2>
+        <h2><span>{{$t('historyUniforms.1980')}}</span> {{$t('historyUniforms.perestroikaInAction')}}</h2>
         <div class="history-school__uniforms-page-content__ussr__1980">
           <el-row :gutter="20">
             <el-col :lg="5" :md="10">
@@ -172,44 +141,36 @@
             <el-col :lg="19" :md="14">
               <div>
                 <p>
-                  В начале 1980-х была введена форма для <span>старшеклассников</span>.
-                  (Такую форму начинали носить с восьмого класса).
-                  <span>Девочки</span> с первого по седьмой класс носили коричневое платье,
-                  как и в предыдущий период. Только оно стало ненамного выше колен
+                  {{$t('historyUniforms.introduced')}} <span>{{$t('historyUniforms.highSchoolStudents')}}</span>.
+                  {{$t('historyUniforms.eighth')}}.
+                  <span>{{$t('historyUniforms.girls')}}</span> {{$t('historyUniforms.fromFirstToSeventhGrade')}}
                 </p>
                 <p>
-                  У <span>мальчиков</span> брюки и куртка заменялись на брючный костюм.
-                  Цвет ткани был по-прежнему синий. Также синей была <span>эмблема</span> на рукаве
+                  {{$t('historyUniforms.u')}} <span>{{$t('historyUniforms.mans')}}</span> {{$t('historyUniforms.costume')}} <span>{{$t('historyUniforms.emblem')}}</span> {{$t('historyUniforms.onTheSleeve')}}
                 </p>
               </div>
             </el-col>
           </el-row>
 
           <p>
-            Очень часто <span>эмблему</span> срезали, так как она выглядела
-            не слишком эстетично, особенно по прошествии некоторого времени
-            — краска на пластике начинала стираться
+            {{$t('historyUniforms.veryOften')}} <span>{{$t('historyUniforms.emblems')}}</span> {{$t('historyUniforms.cutOff')}}
           </p>
           <br>
           <p>
-            Школьную форму <span>1980-х</span> можно увидеть, например, в фильмах «Гостья из будущего» и «Приключения Электроника»
+            {{$t('historyUniforms.schoolUniform')}} <span>{{$t('historyUniforms.1980H')}}</span> {{$t('historyUniforms.canSee')}}
           </p>
 
           <el-row :gutter="20">
             <el-col :lg="12" :md="24">
               <h2>1984</h2>
               <p>
-                Для <span>девочек</span> в 1984 году был введён костюм-тройка
-                синего цвета, состоящий из юбки-трапеции со складками спереди,
-                пиджака с накладными карманами и жилетки. Юбку можно было носить
-                либо с пиджаком, либо с жилетом, либо весь костюм сразу
+                {{$t('historyUniforms.for')}} <span>{{$t('historyUniforms.forGirls')}}</span> {{$t('historyUniforms.threePieceSuit')}}
               </p>
             </el-col>
             <el-col :lg="12" :md="24">
               <h2>1988</h2>
               <p>
-                В 1988 году для Ленинграда,
-                районов Сибири и Крайнего Севера было разрешено ношение синих брюк в зимнее время
+                {{$t('historyUniforms.leningrad')}}
               </p>
             </el-col>
           </el-row>
@@ -220,20 +181,18 @@
           </div>
           <br>
           <p>
-            В некоторых союзных республиках фасон школьной формы немного отличался, также как и цвет.
+            {{$t('historyUniforms.wasDifferent')}}
           </p>
           <p>
-            Так, на Украине школьная форма была коричневого цвета, хотя не запрещалась и синяя
+            {{$t('historyUniforms.ukraine')}}
           </p>
 
           <div class="history-school__uniforms-page-content__ussr__1980-lady">
             <p>
-              Именно эта форма для <span>девочек</span> способствовала тому,
-              что они начинали рано осознавать свою привлекательность
+              {{$t('historyUniforms.ThisTheFormFor')}} <span>{{$t('historyUniforms.forGirls')}}</span> {{$t('historyUniforms.contributed')}}
             </p>
             <p>
-              Плиссированная юбка, жилет и главное — блузки, с которыми
-              можно было экспериментировать, превращали практически любую школьницу в <span>«юную даму»</span>
+              {{$t('historyUniforms.pleated')}} <span>{{$t('historyUniforms.youngLady')}}</span>
             </p>
           </div>
 
@@ -242,53 +201,44 @@
               <el-image src="src/assets/img/icons.png"/>
             </el-col>
             <el-col :lg="17" :md="14">
-              <p>Обязательным дополнением к школьной форме,
-                в зависимости от возраста ученика, были <a href="https://pandia.ru/text/category/oktyabryata/" target="_blank">октябрятский</a>
-                (в начальных классах), пионерский (в средних классах)
-                или комсомольский (в старших классах) <span>значки</span>.
-                Пионеры должны были также обязательно носить <span>пионерский галстук</span></p>
+              <p>{{$t('historyUniforms.mandatoryAddition')}} <a href="https://pandia.ru/text/category/oktyabryata/" target="_blank">{{$t('historyUniforms.october')}}</a>
+                {{$t('historyUniforms.pioneer')}} <span>{{$t('historyUniforms.icons')}}</span>.
+                {{$t('historyUniforms.mustWear')}} <span>{{$t('historyUniforms.pioneerTie')}}</span></p>
             </el-col>
           </el-row>
 
           <p>
-            Помимо обычного пионерского значка существовал особый вариант для <span>пионеров</span>,
-            активно занимающихся <a href="https://pandia.ru/text/category/obshestvennie_raboti/" target="_blank">общественной работой</a>.
-            Он был немного больше обычного и
-            на нём была надпись <span>«За активную работу»</span>
+            {{$t('historyUniforms.pioneerBadge')}} <span>{{$t('historyUniforms.pioneers')}}</span>,
+            {{$t('historyUniforms.activelyInvolved')}} <a href="https://pandia.ru/text/category/obshestvennie_raboti/" target="_blank">{{$t('historyUniforms.socialWork')}}</a>.
+            {{$t('historyUniforms.bitMore')}} <span>{{$t('historyUniforms.activeWork')}}</span>
           </p>
         </div>
       </div>
 
-      <h2>Современная Россия</h2>
+      <h2>{{$t('historyUniforms.modernRussia')}}</h2>
       <div>
         <p>
-          В <span>современной России</span> нет единой школьной формы,
-          как было в <span>СССР</span>, но многие лицеи и гимназии,
-          особенно наиболее престижные, имеют свою собственную форму,
-          подчёркивающую принадлежность учеников к тому или иному учебному заведению
+          {{$t('historyUniforms.in')}} <span>{{$t('historyUniforms.modernsRussia')}}</span> {{$t('historyUniforms.thereNoSingle')}} <span>{{$t('historyUniforms.ussr')}}</span>, {{$t('historyUniforms.ownForm')}}
         </p>
       </div>
 
-      <h2>Школьная форма в других странах</h2>
+      <h2>{{$t('historyUniforms.uniformsInOtherCountries')}}</h2>
       <div class="history-school__uniforms-page-content__country">
         <p>
-          Самой большой европейской страной, в которой существует <span>школьная форма</span>,
-          является Великобритания. Во многих её бывших колониях форма не была
-          отменена и после независимости, например в Индии, Ирландии, Австстралии, Сингапуре и Южной Африке
+          {{$t('historyUniforms.schoolUniforms')}} <span>{{$t('historyUniforms.schoolUniforms')}}</span>,
+          {{$t('historyUniforms.greatBritain')}}. {{$t('historyUniforms.formerColonies')}}
         </p>
         <br>
         <p>
-          В <span>Германии</span> нет единой школьной формы, хотя ведутся дебаты о её введении. <br>
-          В некоторых школах введена <span>единая школьная одежда</span>, не являющаяся формой
-          так как ученики могут участвовать в её разработке. <br> Что характерно, даже
-          во времена Третьего Рейха школьники не имели единой формы — они приходили
-          на занятия в повседневной одежде, в форме Гитлерюгенда (или иных детских общественных организаций)
+          {{$t('historyUniforms.in')}} <span>{{$t('historyUniforms.germany')}}</span> {{$t('historyUniforms.noUniformUniform')}}. <br>
+          {{$t('historyUniforms.someSchoolsHaveIntroduced')}} <span>{{$t('historyUniforms.uniformClothes')}}</span>, {{$t('historyUniforms.studentsCanDevelopment')}}. <br>
+          {{$t('historyUniforms.duringThirdReich')}}
         </p>
         <br>
         <p>
-          В <span>США</span> и <span>Канаде</span> существует школьная форма во многих частных школах. <br>
-          В государственных школах единой формы нет, хотя в некоторых школах введены правила ношения одежды (dress code).
-          На Кубе форма обязательна для всех учащихся школ и высших учебных заведений
+          {{$t('historyUniforms.in')}} <span>{{$t('historyUniforms.america')}}</span> {{$t('historyUniforms.and')}} <span>{{$t('historyUniforms.canada')}}</span>
+          {{$t('historyUniforms.privateSchools')}}. <br>
+          {{$t('historyUniforms.publicSchools')}}
         </p>
 
         <el-row :gutter="20">
@@ -297,11 +247,8 @@
           </el-col>
           <el-col :lg="17" :md="14">
             <p>
-              Для большинства средних и старших школ <span>Японии</span> обязательной считается школьная форма.
-              В каждой школе она своя, но на самом деле вариантов не так уж много.
-              Обычно это белая рубашка и темные пиджак и брюки для <span>мальчиков</span>
-              и белая рубашка и темные пиджак и юбка для <span>девочек</span>, или же сейлор фуку - "матросский костюм".
-              К форме обычно даётся, ещё и большая сумка или портфель. <span>Школьники начальных классов</span>, как правило, одеваются в обычную детскую одежду
+              {{$t('historyUniforms.publicSchools')}} <span>{{$t('historyUniforms.japan')}}</span> {{$t('historyUniforms.options')}} <span>{{$t('historyUniforms.mans')}}</span>
+              {{$t('historyUniforms.whiteShirt')}} <span>{{$t('historyUniforms.forGirls')}}</span>, {{$t('historyUniforms.sailorSuit')}}. <span>{{$t('historyUniforms.primaryStudents')}}</span>, {{$t('historyUniforms.rule')}}
             </p>
           </el-col>
         </el-row>
