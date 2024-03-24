@@ -84,14 +84,14 @@ const historyListHorizontal = ref<Array<IHistory>>([])
 for(let i = 1; i < 14; i++) {
   historyListVertical.value.push({
     id:i,
-    image:`/src/assets/img/historyImgVertical/img${i}.jpg`
+    img:`src/assets/img/historyImgVertical/img${i}.jpg`
   })
 }
 
 for(let i = 1; i < 11; i++) {
   historyListHorizontal.value.push({
     id:i,
-    image:`/src/assets/img/historyImgHorizontal/img${i}.jpg`
+    img:`src/assets/img/historyImgHorizontal/img${i}.jpg`
   })
 }
 

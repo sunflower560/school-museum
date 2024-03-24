@@ -243,7 +243,7 @@
 
         <el-row :gutter="20">
           <el-col :lg="7" :md="10">
-            <img src="src/assets/img/japan.png" alt="картинки нет"/>
+            <img src="/src/assets/img/japan.png" alt="картинки нет"/>
           </el-col>
           <el-col :lg="17" :md="14">
             <p>
