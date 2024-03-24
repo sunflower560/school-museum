@@ -37,6 +37,7 @@ declare module 'vue' {
     ElSwitch: typeof import('element-plus/es')['ElSwitch']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
     ElTabs: typeof import('element-plus/es')['ElTabs']
+    HistoryCard: typeof import('./src/components/cards/HistoryCard.vue')['default']
     IconMd: typeof import('./src/components/IconMd.vue')['default']
     IndentContainer: typeof import('./src/components/containers/IndentContainer.vue')['default']
     Menu: typeof import('./src/components/Menu.vue')['default']

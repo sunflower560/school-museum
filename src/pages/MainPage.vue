@@ -29,17 +29,29 @@
               {{$t('main.events')}}
             </p>
 
-<!--            <el-row :gutter="20">-->
-<!--              <el-col :span="24">-->
-<!--                <swiper  :slidesPerView="mq.smMinus ? 1.9 : 4"-->
-<!--                         :spaceBetween="mq.smMinus ? 5 : 20"-->
-<!--                         :loop="true">-->
-<!--                  <swiper-slide v-for="news in newsList" :key="`news-${news.id}`">-->
-<!--                    <news-card :novelty="news" />-->
-<!--                  </swiper-slide>-->
-<!--                </swiper>-->
-<!--              </el-col>-->
-<!--            </el-row>-->
+            <el-row :gutter="20">
+              <el-col :span="24">
+                <swiper  :slidesPerView="mq.smMinus ? 1.2 : 4"
+                         :spaceBetween="mq.smMinus ? 5 : 20"
+                         :loop="true">
+                  <swiper-slide v-for="history in historyListVertical" :key="`news-${history.id}`">
+                    <news-card :history="history" />
+                  </swiper-slide>
+                </swiper>
+              </el-col>
+            </el-row>
+
+            <el-row :gutter="20">
+              <el-col :span="24">
+                <swiper  :slidesPerView="mq.smMinus ? 1.2 : 4"
+                         :spaceBetween="mq.smMinus ? 5 : 20"
+                         :loop="true">
+                  <swiper-slide v-for="history in historyListHorizontal" :key="`news-${history.id}`">
+                    <news-card :history="history" />
+                  </swiper-slide>
+                </swiper>
+              </el-col>
+            </el-row>
 
             <h2>{{$t('main.importantInformation')}}</h2>
             <p>
@@ -55,26 +67,33 @@
 <script lang="ts" setup>
 import {ref, inject} from 'vue';
 import {useMounted} from "@vueuse/core";
-// import {INovelty} from "@/resources/types";
+import {IHistory} from "@/resources/types";
 
 import 'swiper/css';
-// import { Swiper, SwiperSlide } from 'swiper/vue';
-// import NewsCard from "@/components/cards/NewsCard.vue";
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import NewsCard from "@/components/cards/HistoryCard.vue";
 const isMounted = useMounted()
 
 const  mq = inject('mq',{
   smMinus: false,
 })
 
-// const newsList = ref<Array<INovelty>>([])
-//
-// for(let i = 1; i < 20; i++) {
-//   newsList.value.push({
-//     id:i,
-//     description:`Description for card news id:${i}`,
-//     image:'/src/assets/img/logoSchool.png'
-//   })
-// }
+const historyListVertical = ref<Array<IHistory>>([])
+const historyListHorizontal = ref<Array<IHistory>>([])
+
+for(let i = 1; i < 14; i++) {
+  historyListVertical.value.push({
+    id:i,
+    image:`src/assets/img/historyImgVertical/img${i}.jpg`
+  })
+}
+
+for(let i = 1; i < 11; i++) {
+  historyListHorizontal.value.push({
+    id:i,
+    image:`src/assets/img/historyImgHorizontal/img${i}.jpg`
+  })
+}
 
 </script>
 

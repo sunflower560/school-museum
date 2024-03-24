@@ -3,7 +3,7 @@ import {type IMenuRoute, MaterialIcons} from "@/types";
 import {computed, type ComputedRef} from "vue";
 import type {TrSchema} from "@/locales";
 
-type TMenuBlock = 'admin' | 'resources'
+type TMenuBlock = 'museum' | 'resources'
 interface IMenuBlock {
     caption:string
     captionIcon:MaterialIcons
@@ -15,7 +15,7 @@ const useMenuRoutes = (menuType:TMenuBlock): ComputedRef<IMenuBlock> =>{
     })
     return computed(() => {
         switch (menuType) {
-            case "admin":
+            case "museum":
                 return {
                     caption: t('menu.museum.caption'),
                     captionIcon:MaterialIcons.location_city,
@@ -54,10 +54,10 @@ const useMenuRoutes = (menuType:TMenuBlock): ComputedRef<IMenuBlock> =>{
     })
 }
 const useMenuAllRouts = ():ComputedRef<Array<IMenuRoute>> =>{
-    const admin = useMenuRoutes('admin')
+    const museum = useMenuRoutes('museum')
     const resources = useMenuRoutes('resources')
     return  computed(()=>[
-        ...admin.value.menuRoutes,
+        ...museum.value.menuRoutes,
         ...resources.value.menuRoutes,
     ])
 }

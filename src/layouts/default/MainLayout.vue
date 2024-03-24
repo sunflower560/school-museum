@@ -239,7 +239,7 @@ export default defineComponent({
       smMinus: false,
     })
     const {locale} = useI18n<{ message: TrSchema }, TLocales>({useScope: 'global'})
-    const adminMenuBlock = useMenuRoutes('admin')
+    const adminMenuBlock = useMenuRoutes('museum')
     const resourcesMenuBlock = useMenuRoutes('resources')
     const drawerState = ref(false)
     const footerMain = ref<HTMLElement | null>(null)
