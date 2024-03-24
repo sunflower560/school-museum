@@ -85,7 +85,7 @@
           <div>
             {{ $t('schoolMuseum.symbolicKey') }}
           </div>
-          <el-image src="src/assets/img/klepchukov.jpg" style="width: 210px; height: 300px"/>
+          <img src="/src/assets/img/klepchukov.jpg" alt="картинки нет" style="width: 210px; height: 300px"/>
         </el-collapse-item>
         <el-collapse-item title="2014 г." name="4">
           <div>
@@ -94,7 +94,7 @@
             {{ $t('schoolMuseum.schoolBlownTwo') }}
             <br>
           </div>
-          <el-image src="src/assets/img/korzun.jpg" style="width: 210px; height: 300px"/>
+          <el-image src="/src/assets/img/korzun.jpg" style="width: 210px; height: 300px" alt="картинки нет"/>
         </el-collapse-item>
         <el-collapse-item title="2023 г." name="5">
           <div>
