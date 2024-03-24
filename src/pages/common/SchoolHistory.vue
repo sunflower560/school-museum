@@ -44,6 +44,13 @@
     </div>
 
     <div class="school-history-page-year">
+      <h1>1942 г.</h1>
+      <p>
+        {{ $t('schoolMuseum.1942') }}
+      </p>
+    </div>
+
+    <div class="school-history-page-year">
       <h1>{{ $t('schoolMuseum.year') }}</h1>
       <div class="school-history-page-year-olensky">
         <div>

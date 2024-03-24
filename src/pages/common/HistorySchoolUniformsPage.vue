@@ -225,7 +225,7 @@
       <h2>{{$t('historyUniforms.uniformsInOtherCountries')}}</h2>
       <div class="history-school__uniforms-page-content__country">
         <p>
-          {{$t('historyUniforms.schoolUniforms')}} <span>{{$t('historyUniforms.schoolUniforms')}}</span>,
+          {{$t('historyUniforms.bigEuropeanCountry')}} <span>{{$t('historyUniforms.schoolUniforms')}}</span>,
           {{$t('historyUniforms.greatBritain')}}. {{$t('historyUniforms.formerColonies')}}
         </p>
         <br>
@@ -247,7 +247,7 @@
           </el-col>
           <el-col :lg="17" :md="14">
             <p>
-              {{$t('historyUniforms.publicSchools')}} <span>{{$t('historyUniforms.japan')}}</span> {{$t('historyUniforms.options')}} <span>{{$t('historyUniforms.mans')}}</span>
+              {{$t('historyUniforms.mostAverage')}} <span>{{$t('historyUniforms.japan')}}</span> {{$t('historyUniforms.options')}} <span>{{$t('historyUniforms.mans')}}</span>
               {{$t('historyUniforms.whiteShirt')}} <span>{{$t('historyUniforms.forGirls')}}</span>, {{$t('historyUniforms.sailorSuit')}}. <span>{{$t('historyUniforms.primaryStudents')}}</span>, {{$t('historyUniforms.rule')}}
             </p>
           </el-col>
