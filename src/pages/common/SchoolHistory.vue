@@ -26,7 +26,7 @@
     <h2>{{ $t('schoolMuseum.twoDirector') }}</h2>
     <div class="school-history-page-director">
       <div>
-        <img src="@/src/assets/img/kazimirsky.jpg" style="width: 200px; height: 300px"/>
+        <img src="/src/assets/img/kazimirsky.jpg" style="width: 200px; height: 300px"/>
         <p>{{ $t('schoolMuseum.twoDirectorName') }}</p>
       </div>
       <p>{{ $t('schoolMuseum.twoDirectorDescription') }}</p>
