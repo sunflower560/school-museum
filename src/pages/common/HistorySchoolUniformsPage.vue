@@ -18,7 +18,7 @@
         <h4>{{$t('historyUniforms.1950')}}</h4>
         <el-row :gutter="20">
           <el-col :lg="7" :md="10">
-            <el-image src="src/assets/img/SchoolUssrForm.jpg"/>
+            <img src="/src/assets/img/SchoolUssrForm.jpg" alt="картинки нет"/>
           </el-col>
           <el-col :lg="17" :md="14">
             <p>{{$t('historyUniforms.1918')}}</p>
@@ -60,13 +60,13 @@
                       :spaceBetween="mq.smMinus ? 5 : 20"
                       :loop="true">
                 <swiper-slide>
-                  <el-image src="src/assets/img/manFormUssr.png"/>
+                  <img src="/src/assets/img/manFormUssr.png" alt="картинки нет"/>
                 </swiper-slide>
                 <swiper-slide>
-                  <el-image src="src/assets/img/girlFormUssr.png"/>
+                  <img src="/src/assets/img/girlFormUssr.png" alt="картинки нет"/>
                 </swiper-slide>
                 <swiper-slide>
-                  <el-image src="src/assets/img/manAndGirlFormUssr.png"/>
+                  <img src="/src/assets/img/manAndGirlFormUssr.png" alt="картинки нет"/>
                 </swiper-slide>
               </swiper>
             </el-col>
@@ -97,7 +97,7 @@
           <div class="history-school__uniforms-page-content__ussr__era__puritan-morality">
             <el-row :gutter="20">
               <el-col :lg="7" :md="10">
-                <el-image src="src/assets/img/puritanMorality.png"/>
+                <img src="/src/assets/img/puritanMorality.png" alt="картинки нет"/>
               </el-col>
               <el-col :lg="17" :md="14">
                 <p>{{$t('historyUniforms.hairstyle')}}</p>
@@ -136,7 +136,7 @@
         <div class="history-school__uniforms-page-content__ussr__1980">
           <el-row :gutter="20">
             <el-col :lg="5" :md="10">
-              <el-image src="src/assets/img/man1980.png"/>
+              <img src="/src/assets/img/man1980.png" alt="картинки нет"/>
             </el-col>
             <el-col :lg="19" :md="14">
               <div>
@@ -176,8 +176,8 @@
           </el-row>
 
           <div class="history-school__uniforms-page-content__ussr__1980-photo-girl">
-            <el-image src="src/assets/img/girl1984.png"/>
-            <el-image src="src/assets/img/girl1988.png"/>
+            <img src="/src/assets/img/girl1984.png" alt="картинки нет"/>
+            <img src="/src/assets/img/girl1988.png" alt="картинки нет"/>
           </div>
           <br>
           <p>
@@ -198,7 +198,7 @@
 
           <el-row :gutter="20">
             <el-col :lg="7" :md="10">
-              <el-image src="src/assets/img/icons.png"/>
+              <img src="/src/assets/img/icons.png" alt="картинки нет"/>
             </el-col>
             <el-col :lg="17" :md="14">
               <p>{{$t('historyUniforms.mandatoryAddition')}} <a href="https://pandia.ru/text/category/oktyabryata/" target="_blank">{{$t('historyUniforms.october')}}</a>
@@ -243,7 +243,7 @@
 
         <el-row :gutter="20">
           <el-col :lg="7" :md="10">
-            <el-image src="src/assets/img/japan.png"/>
+            <img src="src/assets/img/japan.png" alt="картинки нет"/>
           </el-col>
           <el-col :lg="17" :md="14">
             <p>
@@ -305,7 +305,7 @@ const isMounted = useMounted()
         text-align: center;
       }
 
-      .el-image {
+      img {
         width: $radius_big * 5;
         border-radius: $size_small * 4;
       }
@@ -333,7 +333,7 @@ const isMounted = useMounted()
 
         .el-row {
           .el-col {
-            .el-image {
+            img {
               cursor: pointer;
               width: ($radius_large - 1) * 5;
               @include transition(transform);
@@ -350,7 +350,7 @@ const isMounted = useMounted()
         &__puritan-morality {
           .el-row {
             .el-col {
-              .el-image {
+              img {
                 width: $radius_big * 5;
               }
             }
@@ -389,7 +389,7 @@ const isMounted = useMounted()
                 }
               }
 
-              .el-image {
+              img {
                 width: $radius_big * 3;
               }
             }
@@ -397,7 +397,7 @@ const isMounted = useMounted()
         }
         &-photo-girl {
           @media #{$md-and-down} {
-            .el-image {
+            img {
               &:nth-child(1) {
                 display: none;
               }
@@ -420,7 +420,7 @@ const isMounted = useMounted()
         margin-top: $radius_big;
         .el-col {
           &:nth-child(1) {
-            .el-image {
+            img {
               border-radius: $size_small * 4;
             }
           }

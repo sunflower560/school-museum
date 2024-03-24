@@ -94,7 +94,7 @@
             {{ $t('schoolMuseum.schoolBlownTwo') }}
             <br>
           </div>
-          <el-image src="/src/assets/img/korzun.jpg" style="width: 210px; height: 300px" alt="картинки нет"/>
+          <img src="/src/assets/img/korzun.jpg" style="width: 210px; height: 300px" alt="картинки нет"/>
         </el-collapse-item>
         <el-collapse-item title="2023 г." name="5">
           <div>
@@ -123,7 +123,7 @@ const isMounted = useMounted()
   text-align: center;
   padding: $size;
 
-  .el-image {
+  img {
     border-radius: $radius_medium;
   }
 
@@ -149,7 +149,7 @@ const isMounted = useMounted()
     margin-top: $radius_medium;
     margin-bottom: $radius_large;
 
-    .el-image {
+    img {
       margin-right: $radius_medium;
     }
 
@@ -168,7 +168,7 @@ const isMounted = useMounted()
     padding: $radius_medium;
     border-radius: $radius_medium;
 
-    .el-image {
+    img {
       margin-right: $radius_medium;
     }
 

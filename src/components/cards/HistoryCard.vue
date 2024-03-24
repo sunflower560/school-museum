@@ -1,7 +1,7 @@
 <template>
   <div class="news-card">
     <el-card shadow="hover">
-      <el-image :src="history.image"/>
+      <img :src="history.image" alt="картинки нет"/>
     </el-card>
   </div>
 </template>
