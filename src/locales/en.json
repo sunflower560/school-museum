@@ -1,6 +1,8 @@
 {
   "common": {
-    "SchoolMuseum8": "School №8 museum"
+    "SchoolMuseum8": "School №8 museum",
+    "developer": "Developer",
+    "daniil": "Melnikov Daniil Yegorovich"
   },
   "museum": {
     "museumExhibition": "Museum exhibition",
