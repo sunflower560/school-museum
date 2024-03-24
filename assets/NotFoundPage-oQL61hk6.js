@@ -1,1 +1,0 @@
-import{d as o,_ as e,o as n,c as t,h as s}from"./index-3FsxvAcu.js";const a=o({name:"NotFoundPage"}),c={class:"page-no-found"},d=s("h1",null,"Page not found :(",-1),_=[d];function r(p,f,i,u,l,h){return n(),t("div",c,_)}const g=e(a,[["render",r]]);export{g as default};
