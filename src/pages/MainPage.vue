@@ -47,11 +47,7 @@
                          :spaceBetween="mq.smMinus ? 5 : 20"
                          :loop="true">
                   <swiper-slide v-for="history in historyListHorizontal" :key="`news-${history.id}`">
-                    <div class="history-card" >
-                      <div class="history-card-img">
-                        <img :src="history.img" alt="картинки нет"/>
-                      </div>
-                    </div>
+                    <history-card :history="history" />
                   </swiper-slide>
                 </swiper>
               </el-col>
@@ -96,14 +92,14 @@ const historyListHorizontal = ref<Array<IHistory>>([])
 for(let i = 1; i < 14; i++) {
   historyListVertical.value.push({
     id:i,
-    img:`/src/assets/img/historyImgVertical/img${i}.jpg`
+    img:`src/assets/img/historyImgVertical/img${i}.jpg`
   })
 }
 
 for(let i = 1; i < 11; i++) {
   historyListHorizontal.value.push({
     id:i,
-    img:`/src/assets/img/historyImgHorizontal/img${i}.jpg`
+    img:`src/assets/img/historyImgHorizontal/img${i}.jpg`
   })
 }
 
@@ -146,31 +142,6 @@ for(let i = 1; i < 11; i++) {
     ul li::marker {
       color: $color_orange_main;
       font-size: $size_big;
-    }
-
-    .history-card{
-      cursor: pointer;
-      &-img{
-        @include transition(transform);
-        &:hover{
-          transform: scale(.95) rotate(1deg);
-          p{
-            color: $color-primary;
-          }
-        }
-        &__body{
-          min-height: 100px;
-          padding: 0;
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          p{
-            @include transition(color);
-            padding: $card-padding;
-            margin: 0;
-          }
-        }
-      }
     }
   }
 }
