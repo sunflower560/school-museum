@@ -11,7 +11,7 @@
         {{$t('menu.museum.routes.exhibition')}} <p>"{{$t('museum.schoolHistory')}}"</p>
       </h2>
       <p>
-        {{$t('museum.schoolAddressOne')}} <br> {{$t('museum.schoolAddressTwo')}}
+        <span>{{$t('museum.schoolAddressOne')}} <br> {{$t('museum.schoolAddressTwo')}}</span>
       </p>
       <a href="https://school8mogilev.by/muzeikomnata" target="_blank">{{$t('museum.virtualExposition')}}</a>
     </div>
@@ -72,6 +72,7 @@ const isMounted = useMounted()
 </script>
 
 <style lang="scss">
+@use '@/styles/common/variables.scss' as *;
 @import '/src/styles/variables.scss';
 
 .museum-exhibition-page {
@@ -80,7 +81,16 @@ const isMounted = useMounted()
 
   &-main {
     margin-bottom: 4rem;
-
+    p {
+      @media #{$md-and-down} {
+        font-size: $radius_medium;
+      }
+      span {
+        @media #{$md-and-down} {
+          font-size: $radius_medium;
+        }
+      }
+    }
     h1 {
       margin-bottom: 3rem;
     }
@@ -114,6 +124,9 @@ const isMounted = useMounted()
     }
 
     ol {
+      @media #{$md-and-down} {
+        font-size: $radius_medium - 2;
+      }
       font-size: $size_small * 2;
       border: $color_blue_light_3 2px solid;
       padding: 2rem;
@@ -138,6 +151,9 @@ const isMounted = useMounted()
     margin-bottom: 5rem;
 
     .demo-tabs {
+      @media #{$md-and-down} {
+        font-size: $radius_medium - 2;
+      }
       padding: 2rem;
       border: $color_blue_light_3 2px solid;
       border-radius: 0.5rem;
@@ -147,12 +163,19 @@ const isMounted = useMounted()
   &-sections {
     h2 {
       margin-bottom: 1.5rem;
+      @media #{$md-and-down} {
+        font-size: $size_big;
+      }
     }
 
     ul {
       text-align: left;
 
       li {
+        @media #{$md-and-down} {
+          font-size: $radius_medium - 1;
+          margin-bottom: 0.5rem;
+        }
         margin-bottom: 1rem;
       }
     }

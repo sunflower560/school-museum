@@ -56,7 +56,7 @@
 
           <el-row :gutter="20">
             <el-col :span="24">
-              <swiper :slidesPerView="mq.smMinus ? 1.9 : 3"
+              <swiper :slidesPerView="mq.smMinus ? 1.4 : 3"
                       :spaceBetween="mq.smMinus ? 5 : 20"
                       :loop="true">
                 <swiper-slide>
@@ -277,7 +277,11 @@ const isMounted = useMounted()
 
 .history-school__uniforms-page {
   padding: $size_big;
-
+  p {
+    @media #{$md-and-down} {
+      font-size: $radius_medium - 2;
+    }
+  }
   h1 {
     margin-bottom: $radio_average;
   }

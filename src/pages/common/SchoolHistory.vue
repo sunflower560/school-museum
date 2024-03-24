@@ -117,6 +117,7 @@ const isMounted = useMounted()
 </script>
 
 <style lang="scss">
+@use '@/styles/common/variables.scss' as *;
 @import '/src/styles/variables.scss';
 
 .school-history-page {
@@ -164,7 +165,7 @@ const isMounted = useMounted()
 
   &-year {
     margin-top: $size_big * 2;
-    border: $color_main_dark_2 solid 2px;
+    border: $color_main_dark_2 solid $size_tiny - 1;
     padding: $radius_medium;
     border-radius: $radius_medium;
 
@@ -199,12 +200,18 @@ const isMounted = useMounted()
   }
 
   h3 {
+    @media #{$md-and-down} {
+      font-size: $radius_medium - 2;
+    }
     font-size: $radius_tiny * 3.4;
     margin-top: $radio_average;
     margin-bottom: $radio_average * 2;
   }
 
   p {
+    @media #{$md-and-down} {
+      font-size: $radius_medium - 3;
+    }
     font-size: $radius_tiny * 3.4;
   }
 }
