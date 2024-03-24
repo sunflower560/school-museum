@@ -35,7 +35,7 @@
                          :spaceBetween="mq.smMinus ? 5 : 20"
                          :loop="true">
                   <swiper-slide v-for="history in historyListVertical" :key="`news-${history.id}`">
-                    <news-card :history="history" />
+                    <history-card :history="history" />
                   </swiper-slide>
                 </swiper>
               </el-col>
@@ -47,7 +47,11 @@
                          :spaceBetween="mq.smMinus ? 5 : 20"
                          :loop="true">
                   <swiper-slide v-for="history in historyListHorizontal" :key="`news-${history.id}`">
-                    <news-card :history="history" />
+                    <div class="history-card" >
+                      <div class="history-card-img">
+                        <img :src="history.img" alt="картинки нет"/>
+                      </div>
+                    </div>
                   </swiper-slide>
                 </swiper>
               </el-col>
@@ -71,11 +75,15 @@
 <script lang="ts" setup>
 import {ref, inject} from 'vue';
 import {useMounted} from "@vueuse/core";
-import {IHistory} from "@/resources/types";
-
 import 'swiper/css';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import NewsCard from "@/components/cards/HistoryCard.vue";
+import HistoryCard from "@/components/cards/HistoryCard.vue";
+
+export interface IHistory {
+  id:number,
+  img:string
+}
+
 const isMounted = useMounted()
 
 const  mq = inject('mq',{
@@ -102,8 +110,10 @@ for(let i = 1; i < 11; i++) {
 </script>
 
 <style lang="scss">
-@use '@/styles/common/assembly.scss' as *;
-@use '@/styles/common/variables.scss' as *;
+@use "@/styles/common/variables.scss" as *;
+@use "@/styles/mixins/environment.scss" as env;
+@use "@/styles/common/assembly.scss" as *;
+@use "@/styles/animations/rotation.scss";
 @import '/src/styles/variables.scss';
 .main-page{
   &__container {
@@ -136,6 +146,31 @@ for(let i = 1; i < 11; i++) {
     ul li::marker {
       color: $color_orange_main;
       font-size: $size_big;
+    }
+
+    .history-card{
+      cursor: pointer;
+      &-img{
+        @include transition(transform);
+        &:hover{
+          transform: scale(.95) rotate(1deg);
+          p{
+            color: $color-primary;
+          }
+        }
+        &__body{
+          min-height: 100px;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          p{
+            @include transition(color);
+            padding: $card-padding;
+            margin: 0;
+          }
+        }
+      }
     }
   }
 }

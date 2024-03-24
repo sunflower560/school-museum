@@ -1,5 +1,5 @@
 <template>
-  <div class="news-card">
+  <div class="history-card">
     <el-card shadow="hover">
       <img :src="history.img" alt="картинки нет"/>
     </el-card>
@@ -7,7 +7,10 @@
 </template>
 
 <script lang="ts" setup>
-import {IHistory} from "@/resources/types";
+export interface IHistory {
+  id:number,
+  img:string
+}
 
 const props = defineProps<{
   history: IHistory
@@ -20,7 +23,7 @@ const props = defineProps<{
 @use "@/styles/mixins/environment.scss" as env;
 @use "@/styles/common/assembly.scss" as *;
 @use "@/styles/animations/rotation.scss";
-.news-card{
+.history-card{
   cursor: pointer;
   .el-card{
     @include transition(transform);
@@ -43,6 +46,5 @@ const props = defineProps<{
       }
     }
   }
-
 }
 </style>
