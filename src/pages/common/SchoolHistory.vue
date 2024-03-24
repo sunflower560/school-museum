@@ -17,7 +17,7 @@
     <h2>{{ $t('schoolMuseum.oneDirector') }}</h2>
     <div class="school-history-page-director">
       <div>
-        <el-image src="/src/assets/img/minin.jpg" style="width: 230px; height: 300px"/>
+        <img src="src/assets/img/minin.jpg" style="width: 230px; height: 300px"/>
         <p>{{ $t('schoolMuseum.oneDirectorName') }}</p>
       </div>
       <p>{{ $t('schoolMuseum.oneDirectorDescription') }}</p>
@@ -26,7 +26,7 @@
     <h2>{{ $t('schoolMuseum.twoDirector') }}</h2>
     <div class="school-history-page-director">
       <div>
-        <el-image src="@/src/assets/img/kazimirsky.jpg" style="width: 200px; height: 300px"/>
+        <img src="@/src/assets/img/kazimirsky.jpg" style="width: 200px; height: 300px"/>
         <p>{{ $t('schoolMuseum.twoDirectorName') }}</p>
       </div>
       <p>{{ $t('schoolMuseum.twoDirectorDescription') }}</p>
@@ -54,7 +54,7 @@
       <h1>{{ $t('schoolMuseum.year') }}</h1>
       <div class="school-history-page-year-olensky">
         <div>
-          <el-image src="../.../src/assets/img/olensky.jpg" style="width: 210px; height: 300px"/>
+          <img src="/src/assets/img/olensky.jpg" style="width: 210px; height: 300px"/>
           <p>{{ $t('schoolMuseum.directorOlensky') }}</p>
         </div>
         <p>
