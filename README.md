@@ -44,3 +44,5 @@ npm run build
 ```sh
 npm run test:unit
 ```
+
+приложение: https://sunflower560.github.io/school-museum/
